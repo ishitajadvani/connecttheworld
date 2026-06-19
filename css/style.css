@@ -350,6 +350,64 @@ section { padding: 80px 24px; }
 }
 
 /* =============================================
+   HERO ENQUIRY (stats + form below banner)
+   ============================================= */
+.hero-enquiry {
+  background: var(--bg-light);
+  padding: 72px 24px;
+}
+.hero-enquiry-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-enquiry-stats { }
+.hero-enquiry-form { }
+.inline-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+.inline-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.inline-stat-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.inline-stat-num {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+.inline-stat-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+@media (max-width: 900px) {
+  .hero-enquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 560px) {
+  .inline-stats { grid-template-columns: 1fr 1fr; gap: 14px; }
+}
+
+/* =============================================
    DESTINATIONS SLIDER
    ============================================= */
 .destinations { background: var(--bg-light); }
