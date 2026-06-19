@@ -8,9 +8,10 @@
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- SCROLL REVEAL (data-reveal) ----
-     Psychological: staged entrance guides attention sequentially,
-     preventing cognitive overload and signalling premium craft.
+  /* ---- SCROLL REVEAL (data-reveal) — bidirectional ----
+     Triggers on scroll down AND scroll up: class is added when
+     element enters viewport, removed when it leaves, so every
+     pass through the viewport replays the entrance animation.
   ---- */
   function initReveal() {
     const els = document.querySelectorAll('[data-reveal]');
@@ -25,7 +26,8 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('is-visible');
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
@@ -33,9 +35,8 @@
     els.forEach(el => io.observe(el));
   }
 
-  /* ---- SECTION TAG LINE REVEAL ----
-     The horizontal line "grows" into view, drawing the eye
-     down to the heading — a refined editorial technique.
+  /* ---- SECTION TAG LINE REVEAL — bidirectional ----
+     Line grows in when scrolled into view from either direction.
   ---- */
   function initSectionTags() {
     if (reduced) {
@@ -46,16 +47,16 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('tag-visible');
-          io.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('tag-visible');
         }
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.5 });
     document.querySelectorAll('.section-tag').forEach(el => io.observe(el));
   }
 
-  /* ---- TIMELINE LINE DRAW ----
-     The connecting line between steps "draws itself" as the
-     itinerary enters view — visually narrating the journey.
+  /* ---- TIMELINE LINE DRAW — bidirectional ----
+     Gradient line draws and retracts as section enters / leaves.
   ---- */
   function initTimeline() {
     if (reduced) return;
@@ -66,7 +67,8 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('line-visible');
-          io.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('line-visible');
         }
       });
     }, { threshold: 0.15 });
