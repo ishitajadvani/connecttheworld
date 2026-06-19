@@ -1,0 +1,752 @@
+/* =============================================
+   CONNECT THE WORLD — Premium Animation System
+   Brand: Luxury · Futuristic · Sporty · Elegant
+   ============================================= */
+
+/* ---- ACCESSIBILITY: Respect reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .section-tag::before { width: 40px !important; }
+}
+
+/* =============================================
+   KEYFRAMES
+   ============================================= */
+
+/* Hero badge drops from above */
+@keyframes badgeSlideDown {
+  from { opacity: 0; transform: translateY(-28px) scale(0.92); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* General fade-up entrance */
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Horizontal shimmer sweep (buttons, badges) */
+@keyframes shimmerSweep {
+  0%   { left: -80%; }
+  100% { left: 160%; }
+}
+
+/* Gentle vertical float — for image and badge */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* Float with slight rotation — why-us floating badge */
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  50%       { transform: translateY(-9px) rotate(-3deg); }
+}
+
+/* Active hero dot pulse ring */
+@keyframes dotPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(240,165,0,0.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(240,165,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(240,165,0,0); }
+}
+
+/* Ken Burns cinematic pan-zoom for hero slides */
+@keyframes kenBurns1 {
+  0%   { transform: scale(1.00) translate(0%,    0%); }
+  100% { transform: scale(1.12) translate(-1.5%, -1%); }
+}
+@keyframes kenBurns2 {
+  0%   { transform: scale(1.08) translate(2%,  0.5%); }
+  100% { transform: scale(1.00) translate(0%,  1%); }
+}
+@keyframes kenBurns3 {
+  0%   { transform: scale(1.00) translate(-1%,  1%); }
+  100% { transform: scale(1.11) translate(1.5%, -1%); }
+}
+
+/* Clip-path left→right text reveal */
+@keyframes clipReveal {
+  from { clip-path: inset(0 100% 0 0); opacity: 0.4; }
+  to   { clip-path: inset(0 0%   0 0); opacity: 1; }
+}
+
+/* Stat number pop entrance */
+@keyframes statPop {
+  0%   { transform: scale(0.75); opacity: 0; }
+  65%  { transform: scale(1.08); }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+/* Button click ripple */
+@keyframes ripple {
+  from { transform: scale(0);  opacity: 0.55; }
+  to   { transform: scale(4.5); opacity: 0; }
+}
+
+/* Logo globe glow pulse */
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0  0px rgba(240,165,0,0)); }
+  50%       { filter: drop-shadow(0 0 10px rgba(240,165,0,0.7)); }
+}
+
+/* Section divider line grow */
+@keyframes lineGrow {
+  from { width: 0; opacity: 0; }
+  to   { width: 40px; opacity: 1; }
+}
+
+/* Skeleton loading shimmer (for images before load) */
+@keyframes skeletonShimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+/* =============================================
+   SCROLL REVEAL SYSTEM
+   Add data-reveal="fade-up|fade-left|fade-right|scale-in"
+   and optionally data-delay="100..700" (ms)
+   JS adds .is-visible when element enters viewport
+   ============================================= */
+
+[data-reveal] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-duration: 700ms;
+  will-change: opacity, transform;
+}
+
+[data-reveal="fade-up"]    { transform: translateY(44px); }
+[data-reveal="fade-down"]  { transform: translateY(-32px); }
+[data-reveal="fade-left"]  { transform: translateX(-48px); }
+[data-reveal="fade-right"] { transform: translateX(48px); }
+[data-reveal="scale-in"]   { transform: scale(0.86); }
+[data-reveal="scale-up"]   { transform: scale(0.90) translateY(28px); }
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delay utilities */
+[data-delay="100"] { transition-delay: 100ms; }
+[data-delay="150"] { transition-delay: 150ms; }
+[data-delay="200"] { transition-delay: 200ms; }
+[data-delay="250"] { transition-delay: 250ms; }
+[data-delay="300"] { transition-delay: 300ms; }
+[data-delay="350"] { transition-delay: 350ms; }
+[data-delay="400"] { transition-delay: 400ms; }
+[data-delay="500"] { transition-delay: 500ms; }
+[data-delay="600"] { transition-delay: 600ms; }
+[data-delay="700"] { transition-delay: 700ms; }
+
+/* =============================================
+   HERO SECTION
+   Psychological: cinematic motion triggers wanderlust,
+   staggered copy entrance signals intentional brand quality
+   ============================================= */
+
+/* Ken Burns — each slide gets its own motion vector */
+.hero-slide:nth-child(1).active { animation: kenBurns1 14s ease-in-out infinite alternate; }
+.hero-slide:nth-child(2).active { animation: kenBurns2 16s ease-in-out infinite alternate; }
+.hero-slide:nth-child(3).active { animation: kenBurns3 15s ease-in-out infinite alternate; }
+
+/* Staggered hero content entrance */
+.hero-badge {
+  animation: badgeSlideDown 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 0.25s;
+}
+.hero-content h1 {
+  animation: fadeUpIn 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: 0.5s;
+}
+.hero-content > p {
+  animation: fadeUpIn 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: 0.75s;
+}
+.hero-actions {
+  animation: fadeUpIn 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: 0.95s;
+}
+
+/* Active dot — pulsing ring signals the slider is alive */
+.hero-dot.active {
+  animation: dotPulse 2.2s ease-out infinite;
+}
+
+/* =============================================
+   NAVIGATION
+   Psychological: active underline confirms user's location;
+   staggered mobile links feel deliberate and crafted
+   ============================================= */
+
+/* Logo globe glow — subtle heartbeat, brand aliveness */
+.logo-icon {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: glowPulse 4s ease-in-out infinite;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo:hover .logo-icon {
+  transform: rotate(20deg) scale(1.18);
+  animation-play-state: paused;
+}
+
+/* Nav link animated underline sweep */
+.nav-links a {
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: left 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+              right 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.nav-links a:hover::after,
+.nav-links a.active-link::after {
+  left: 8px;
+  right: 8px;
+}
+
+/* Header glass morphism on scroll — smooth transparency→frosted */
+#header {
+  transition: background 0.4s ease,
+              box-shadow 0.4s ease,
+              backdrop-filter 0.4s ease;
+}
+#header.scrolled {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Mobile nav panel slide-in from right */
+.mobile-nav-panel {
+  transform: translateX(100%);
+  transition: transform 0.42s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.mobile-nav.open .mobile-nav-panel {
+  transform: translateX(0);
+}
+
+/* Mobile nav links stagger entrance */
+.mobile-nav-panel a,
+.mobile-nav-panel .mobile-lang-btn {
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.32s ease, transform 0.32s ease, color 0.2s ease;
+}
+.mobile-nav.open .mobile-nav-panel a:nth-child(1)         { opacity:1; transform:none; transition-delay:0.08s; }
+.mobile-nav.open .mobile-nav-panel a:nth-child(2)         { opacity:1; transform:none; transition-delay:0.14s; }
+.mobile-nav.open .mobile-nav-panel a:nth-child(3)         { opacity:1; transform:none; transition-delay:0.20s; }
+.mobile-nav.open .mobile-nav-panel a:nth-child(4)         { opacity:1; transform:none; transition-delay:0.26s; }
+.mobile-nav.open .mobile-nav-panel a:nth-child(5)         { opacity:1; transform:none; transition-delay:0.32s; }
+.mobile-nav.open .mobile-nav-panel a:nth-child(6)         { opacity:1; transform:none; transition-delay:0.38s; }
+.mobile-nav.open .mobile-nav-panel a:nth-child(7)         { opacity:1; transform:none; transition-delay:0.44s; }
+.mobile-nav.open .mobile-nav-panel .mobile-lang-btn       { opacity:1; transform:none; transition-delay:0.50s; }
+
+/* Hamburger → X morph */
+.mobile-menu-btn span {
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+  transform-origin: center;
+}
+.mobile-menu-btn.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mobile-menu-btn.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mobile-menu-btn.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* =============================================
+   BUTTONS
+   Psychological: shimmer implies value behind the CTA;
+   lift + shadow add tactile physicality to digital elements
+   ============================================= */
+
+/* Primary — shimmer sweep on hover + lift */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s ease,
+              box-shadow 0.22s ease,
+              background 0.3s ease !important;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.28),
+    transparent
+  );
+  transform: skewX(-18deg);
+  pointer-events: none;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(240,165,0,0.45);
+}
+.btn-primary:hover::before {
+  animation: shimmerSweep 0.55s ease forwards;
+}
+.btn-primary:active { transform: translateY(-1px); }
+
+/* Outline — border fill sweep */
+.btn-outline {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: color 0.3s ease, transform 0.22s ease, border-color 0.3s ease !important;
+}
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.18);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.38s cubic-bezier(0.22, 0.61, 0.36, 1);
+  z-index: -1;
+}
+.btn-outline:hover::before { transform: scaleX(1); }
+.btn-outline:hover { transform: translateY(-2px); border-color: white; }
+
+/* Book Now (btn-sm) — simple lift */
+.btn-sm {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.25s ease !important;
+}
+.btn-sm:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(26,107,90,0.28);
+}
+.btn-sm::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: skewX(-18deg);
+  pointer-events: none;
+}
+.btn-sm:hover::before {
+  animation: shimmerSweep 0.5s ease forwards;
+}
+
+/* Click ripple element injected by JS */
+.btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.38);
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  animation: ripple 0.65s linear forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* =============================================
+   CARDS — DESTINATION
+   Psychological: 3D tilt gives tactile physicality;
+   image scale simulates "looking closer" into the destination
+   ============================================= */
+
+.dest-card {
+  transition: transform 0.38s cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 0.38s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+.dest-card:hover {
+  box-shadow: 0 24px 56px rgba(0,0,0,0.24);
+}
+.dest-img {
+  transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+.dest-card:hover .dest-img {
+  transform: scale(1.09);
+}
+/* Destination info slides up more on hover */
+.dest-info {
+  transition: transform 0.38s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.dest-card:hover .dest-info {
+  transform: translateY(-4px);
+}
+
+/* =============================================
+   CARDS — PACKAGE
+   Psychological: vertical lift increases perceived value;
+   consistent behavior across cards builds trust
+   ============================================= */
+
+.package-card {
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 0.35s ease;
+  will-change: transform;
+}
+.package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 64px rgba(0,0,0,0.18);
+}
+.package-img {
+  transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+.package-card:hover .package-img {
+  transform: scale(1.07);
+}
+
+/* Badge shimmer — signals urgency and value */
+.package-badge {
+  position: relative;
+  overflow: hidden;
+}
+.package-badge::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  animation: shimmerSweep 2.8s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+/* =============================================
+   REVIEW CARDS
+   Psychological: subtle lift creates delight;
+   star scale on hover draws attention to rating quality
+   ============================================= */
+
+.review-card {
+  transition: transform 0.32s ease, box-shadow 0.32s ease;
+}
+.review-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.11);
+}
+.review-stars {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              letter-spacing 0.25s ease;
+}
+.review-card:hover .review-stars {
+  transform: scale(1.12);
+  letter-spacing: 2px;
+}
+.reviewer-avatar {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease;
+}
+.review-card:hover .reviewer-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(26,107,90,0.3);
+}
+
+/* =============================================
+   WHY CHOOSE US
+   Psychological: floating image suggests dynamism and energy;
+   icon bounce on hover adds playful luxury feel
+   ============================================= */
+
+/* Floating image — organic, always in motion */
+.why-img-wrap img {
+  animation: floatY 6s ease-in-out infinite;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.why-img-wrap:hover img {
+  animation-play-state: paused;
+  transform: scale(1.03);
+}
+
+/* Floating badge */
+.why-badge-float {
+  animation: floatBadge 4.5s ease-in-out infinite;
+}
+
+/* Why items — translate right on hover (directional pull toward CTA) */
+.why-item {
+  transition: transform 0.25s ease;
+  cursor: default;
+}
+.why-item:hover {
+  transform: translateX(8px);
+}
+/* Icon bounce with spring */
+.why-icon {
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-flex;
+}
+.why-item:hover .why-icon {
+  transform: scale(1.22) rotate(8deg);
+}
+
+/* =============================================
+   STATS / INLINE STATS
+   Psychological: numbers building up = proof of scale;
+   lift on hover makes each stat feel individually significant
+   ============================================= */
+
+.inline-stat {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.inline-stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+}
+.inline-stat-num {
+  transition: color 0.2s ease;
+}
+.inline-stat:hover .inline-stat-num {
+  color: var(--accent);
+}
+.inline-stat-icon {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.inline-stat:hover .inline-stat-icon {
+  transform: scale(1.25) rotate(-5deg);
+}
+
+/* =============================================
+   SECTION TAGS — animated line
+   Psychological: line "growing" draws the eye naturally
+   to the heading below it
+   ============================================= */
+
+.section-tag {
+  position: relative;
+}
+.section-tag::before {
+  content: '';
+  position: absolute;
+  left: -52px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background: var(--primary);
+  width: 0;
+  border-radius: 2px;
+  transition: width 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s;
+}
+/* Only show line when NOT inside a centered header */
+.section-header:not(.centered) .section-tag::before,
+.hero-enquiry-stats .section-tag::before,
+.why-us .section-tag::before {
+  display: block;
+}
+.section-header.centered .section-tag::before { display: none; }
+
+.section-tag.tag-visible::before {
+  width: 40px;
+}
+
+/* =============================================
+   ITINERARY TIMELINE
+   Psychological: line drawing reveals the journey unfolding
+   in real time, creating narrative engagement
+   ============================================= */
+
+.itinerary-timeline::before {
+  background: linear-gradient(to bottom, var(--primary), var(--accent));
+  transition: height 1.3s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s;
+}
+/* Override static border with animated version */
+.itinerary-timeline.line-draw::before {
+  content: '';
+  position: absolute;
+  left: 19px; top: 0;
+  width: 2px;
+  height: 0;
+  background: linear-gradient(to bottom, var(--primary), var(--accent));
+  z-index: 0;
+  border-radius: 2px;
+  transition: height 1.3s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s;
+}
+.itinerary-timeline.line-draw.line-visible::before {
+  height: calc(100% - 80px);
+}
+
+/* Timeline dot spring pop on hover */
+.timeline-dot {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease;
+}
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.22);
+  box-shadow: 0 0 0 8px rgba(26,107,90,0.18);
+}
+
+/* Itinerary image scale */
+.itinerary-img img {
+  transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.itinerary-img:hover img {
+  transform: scale(1.05);
+}
+
+/* Itinerary tab indicator */
+.itinerary-tab {
+  position: relative;
+  overflow: hidden;
+}
+.itinerary-tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: left 0.3s ease, right 0.3s ease;
+}
+.itinerary-tab:hover:not(.active)::after {
+  left: 20%; right: 20%;
+}
+
+/* =============================================
+   FAQ ACCORDION
+   Psychological: smooth reveal (not instant snap) feels
+   deliberate; + → × rotation is satisfying closure
+   ============================================= */
+
+.faq-answer {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  transition: max-height 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
+              opacity 0.38s ease 0.06s,
+              padding-top 0.3s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 200px;
+  opacity: 1;
+  padding-top: 12px;
+}
+
+.faq-icon {
+  display: inline-block;
+  transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+  line-height: 1;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-question {
+  transition: color 0.22s ease, background 0.22s ease;
+}
+.faq-question:hover { color: var(--primary); }
+
+/* =============================================
+   FOOTER
+   Psychological: arrow appearing on link hover signals
+   forward momentum — mirroring the travel brand promise
+   ============================================= */
+
+/* Footer link arrow slide */
+.footer-links a {
+  position: relative;
+  transition: color 0.2s ease, padding-left 0.25s ease;
+}
+.footer-links a::before {
+  content: '›';
+  position: absolute;
+  left: -16px;
+  opacity: 0;
+  color: var(--accent);
+  transition: left 0.22s ease, opacity 0.22s ease;
+  font-size: 1.1rem;
+  line-height: 1;
+  top: 1px;
+}
+.footer-links a:hover {
+  color: var(--accent);
+  padding-left: 12px;
+}
+.footer-links a:hover::before {
+  left: -2px;
+  opacity: 1;
+}
+
+/* Social buttons spring bounce */
+.social-btn {
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.25s ease,
+              box-shadow 0.25s ease !important;
+}
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.12);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+}
+
+/* =============================================
+   ENQUIRY FORM
+   Psychological: inputs lifting slightly on focus creates
+   a sense that the form "opens up" and welcomes input
+   ============================================= */
+
+.enquiry-card {
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+.enquiry-card:hover {
+  box-shadow: 0 24px 64px rgba(0,0,0,0.14);
+  transform: translateY(-3px);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  transition: border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.2s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(26,107,90,0.14);
+}
+
+/* =============================================
+   HIGHLIGHT TAGS (itinerary)
+   ============================================= */
+
+.highlight-tag {
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.22s ease,
+              background 0.22s ease;
+}
+.highlight-tag:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+/* =============================================
+   PARALLAX LAYER (applied via JS transforms)
+   ============================================= */
+
+.hero-slides {
+  will-change: transform;
+}
+.hero-content {
+  will-change: transform;
+}

@@ -6,6 +6,7 @@
   <meta name="description" content="Connect The World - Premium Tours & Travel Agency based in UAE. Expert travel packages to 50+ destinations worldwide." />
   <title>Connect The World | Premium Tours & Travel</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <script>
@@ -164,34 +165,34 @@
     <div class="hero-enquiry-grid">
 
       <!-- LEFT: Stats -->
-      <div class="hero-enquiry-stats fade-in">
+      <div class="hero-enquiry-stats" data-reveal="fade-right">
         <div class="section-tag" data-i18n="enq_tag">Get In Touch</div>
         <h2 class="section-title" style="margin-bottom:8px;" data-i18n="enq_title">Send Us an <span>Enquiry</span></h2>
         <p class="section-sub" style="margin-bottom:36px;" data-i18n="enq_sub">Fill in your details and our travel experts will get back to you within 24 hours.</p>
 
         <div class="inline-stats">
-          <div class="inline-stat">
+          <div class="inline-stat" data-reveal="scale-in" data-delay="100">
             <div class="inline-stat-icon">🏆</div>
             <div>
               <div class="inline-stat-num" data-i18n="stat1_num" data-target="14">14+</div>
               <div class="inline-stat-label" data-i18n="stat1_label">Years of Experience</div>
             </div>
           </div>
-          <div class="inline-stat">
+          <div class="inline-stat" data-reveal="scale-in" data-delay="200">
             <div class="inline-stat-icon">😊</div>
             <div>
               <div class="inline-stat-num" data-i18n="stat2_num" data-target="5000">5,000+</div>
               <div class="inline-stat-label" data-i18n="stat2_label">Happy Travellers</div>
             </div>
           </div>
-          <div class="inline-stat">
+          <div class="inline-stat" data-reveal="scale-in" data-delay="300">
             <div class="inline-stat-icon">🌍</div>
             <div>
               <div class="inline-stat-num" data-i18n="stat3_num" data-target="50">50+</div>
               <div class="inline-stat-label" data-i18n="stat3_label">World Destinations</div>
             </div>
           </div>
-          <div class="inline-stat">
+          <div class="inline-stat" data-reveal="scale-in" data-delay="400">
             <div class="inline-stat-icon">⭐</div>
             <div>
               <div class="inline-stat-num" data-i18n="stat4_num" data-target="98">98%</div>
@@ -202,7 +203,7 @@
       </div>
 
       <!-- RIGHT: Enquiry Form -->
-      <div class="hero-enquiry-form fade-in fade-in-delay-1">
+      <div class="hero-enquiry-form" data-reveal="fade-left" data-delay="200">
         <div class="enquiry-card">
           <form id="enquiryForm" class="enquiry-form" novalidate onsubmit="handleEnquiry(event)">
             <div class="form-row">
@@ -263,7 +264,7 @@
      ============================================= -->
 <section class="destinations" id="destinations">
   <div class="container">
-    <div class="section-header fade-in">
+    <div class="section-header" data-reveal="fade-up">
       <div class="section-tag" data-i18n="dest_tag">World Destinations</div>
       <h2 class="section-title" data-i18n="dest_title">Explore Our <span>Top Destinations</span></h2>
       <p class="section-sub" data-i18n="dest_sub">From the pristine beaches of the Maldives to the historic streets of Europe — discover the world's most breathtaking places.</p>
@@ -273,7 +274,7 @@
       <div class="slider-track" id="destTrack">
 
         <!-- Card 1 - Switzerland -->
-        <div class="dest-card fade-in">
+        <div class="dest-card" data-reveal="scale-up" data-delay="0">
           <img class="dest-img"
             src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=600&q=80"
             alt="Swiss Alps" loading="lazy" />
@@ -287,7 +288,7 @@
         </div>
 
         <!-- Card 2 - Japan -->
-        <div class="dest-card fade-in fade-in-delay-1">
+        <div class="dest-card" data-reveal="scale-up" data-delay="150">
           <img class="dest-img"
             src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80"
             alt="Tokyo Japan" loading="lazy" />
@@ -301,7 +302,7 @@
         </div>
 
         <!-- Card 3 - Maldives -->
-        <div class="dest-card fade-in fade-in-delay-2">
+        <div class="dest-card" data-reveal="scale-up" data-delay="300">
           <img class="dest-img"
             src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80"
             alt="Maldives" loading="lazy" />
@@ -315,7 +316,7 @@
         </div>
 
         <!-- Card 4 - Italy -->
-        <div class="dest-card fade-in">
+        <div class="dest-card" data-reveal="scale-up" data-delay="0">
           <img class="dest-img"
             src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80"
             alt="Rome Italy" loading="lazy" />
@@ -329,7 +330,7 @@
         </div>
 
         <!-- Card 5 - Turkey -->
-        <div class="dest-card fade-in fade-in-delay-1">
+        <div class="dest-card" data-reveal="scale-up" data-delay="150">
           <img class="dest-img"
             src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=600&q=80"
             alt="Istanbul Turkey" loading="lazy" />
@@ -343,7 +344,7 @@
         </div>
 
         <!-- Card 6 - Thailand -->
-        <div class="dest-card fade-in fade-in-delay-2">
+        <div class="dest-card" data-reveal="scale-up" data-delay="300">
           <img class="dest-img"
             src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80"
             alt="Bangkok Thailand" loading="lazy" />
@@ -377,7 +378,7 @@
      ============================================= -->
 <section class="packages" id="packages">
   <div class="container">
-    <div class="section-header fade-in">
+    <div class="section-header" data-reveal="fade-up">
       <div class="section-tag" data-i18n="pkg_tag">Our Packages</div>
       <h2 class="section-title" data-i18n="pkg_title">Handpicked <span>Travel Packages</span></h2>
       <p class="section-sub" data-i18n="pkg_sub">All-inclusive packages designed for every kind of traveller — from adventure seekers to luxury lovers.</p>
@@ -386,7 +387,7 @@
     <div class="packages-grid">
 
       <!-- Package 1 - Dubai -->
-      <div class="package-card featured fade-in">
+      <div class="package-card featured" data-reveal="scale-up" data-delay="0">
         <div class="package-badge" data-i18n="pkg1_badge">Best Seller</div>
         <img class="package-img"
           src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80"
@@ -411,7 +412,7 @@
       </div>
 
       <!-- Package 2 - Europe -->
-      <div class="package-card fade-in fade-in-delay-1">
+      <div class="package-card" data-reveal="scale-up" data-delay="150">
         <div class="package-badge hot" data-i18n="pkg2_badge">Hot Deal</div>
         <img class="package-img"
           src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
@@ -436,7 +437,7 @@
       </div>
 
       <!-- Package 3 - Maldives -->
-      <div class="package-card fade-in fade-in-delay-2">
+      <div class="package-card" data-reveal="scale-up" data-delay="300">
         <img class="package-img"
           src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80"
           alt="Maldives Honeymoon" loading="lazy" />
@@ -460,7 +461,7 @@
       </div>
 
       <!-- Package 4 - Japan -->
-      <div class="package-card fade-in">
+      <div class="package-card" data-reveal="scale-up" data-delay="0">
         <div class="package-badge" data-i18n="pkg4_badge">New</div>
         <img class="package-img"
           src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80"
@@ -485,7 +486,7 @@
       </div>
 
       <!-- Package 5 - Safari -->
-      <div class="package-card fade-in fade-in-delay-1">
+      <div class="package-card" data-reveal="scale-up" data-delay="150">
         <img class="package-img"
           src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80"
           alt="Safari Tanzania" loading="lazy" />
@@ -509,7 +510,7 @@
       </div>
 
       <!-- Package 6 - Turkey -->
-      <div class="package-card fade-in fade-in-delay-2">
+      <div class="package-card" data-reveal="scale-up" data-delay="300">
         <img class="package-img"
           src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&q=80"
           alt="Cappadocia Turkey" loading="lazy" />
@@ -541,7 +542,7 @@
      ============================================= -->
 <section class="itinerary" id="itinerary">
   <div class="container">
-    <div class="section-header fade-in">
+    <div class="section-header" data-reveal="fade-up">
       <div class="section-tag" data-i18n="itin_tag">Sample Itineraries</div>
       <h2 class="section-title" data-i18n="itin_title">Your Journey, <span>Day by Day</span></h2>
       <p class="section-sub" data-i18n="itin_sub">Meticulously planned itineraries so you can focus on making memories.</p>
@@ -712,7 +713,7 @@
 <section class="why-us" id="why-us">
   <div class="container">
     <div class="why-grid">
-      <div class="why-img-wrap fade-in">
+      <div class="why-img-wrap" data-reveal="fade-right">
         <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&q=80" alt="Travel Experience" loading="lazy" />
         <div class="why-badge-float">
           <div class="why-badge-icon">🏆</div>
@@ -723,41 +724,41 @@
         </div>
       </div>
 
-      <div class="fade-in fade-in-delay-1">
+      <div data-reveal="fade-left" data-delay="200">
         <div class="section-tag" data-i18n="why_tag">Why Choose Us</div>
         <h2 class="section-title" data-i18n="why_title">Travel Smarter with <span>Connect The World</span></h2>
         <p class="section-sub" data-i18n="why_sub">With over 14 years of expertise and thousands of happy travellers, we make every journey seamless and unforgettable.</p>
 
         <div class="why-items">
-          <div class="why-item">
+          <div class="why-item" data-reveal="fade-left" data-delay="100">
             <div class="why-icon">🧭</div>
             <div class="why-item-text">
               <h4 data-i18n="why1_title">Expert Local Guides</h4>
               <p data-i18n="why1_desc">Our certified guides bring destinations to life with insider knowledge and genuine passion for travel.</p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item" data-reveal="fade-left" data-delay="200">
             <div class="why-icon">✏️</div>
             <div class="why-item-text">
               <h4 data-i18n="why2_title">Fully Customised Tours</h4>
               <p data-i18n="why2_desc">Every trip is tailored to your preferences, budget, and travel style — no one-size-fits-all packages.</p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item" data-reveal="fade-left" data-delay="300">
             <div class="why-icon">📞</div>
             <div class="why-item-text">
               <h4 data-i18n="why3_title">24/7 Travel Support</h4>
               <p data-i18n="why3_desc">Our dedicated support team is always available, wherever you are in the world.</p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item" data-reveal="fade-left" data-delay="400">
             <div class="why-icon">💰</div>
             <div class="why-item-text">
               <h4 data-i18n="why4_title">Best Price Guarantee</h4>
               <p data-i18n="why4_desc">We negotiate the best rates directly with hotels and airlines so you get maximum value.</p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item" data-reveal="fade-left" data-delay="500">
             <div class="why-icon">🛡️</div>
             <div class="why-item-text">
               <h4 data-i18n="why5_title">Safe & Secure Travel</h4>
@@ -775,7 +776,7 @@
      ============================================= -->
 <section class="reviews" id="reviews">
   <div class="container">
-    <div class="section-header centered fade-in">
+    <div class="section-header centered" data-reveal="fade-up">
       <div class="section-tag" data-i18n="review_tag">Testimonials</div>
       <h2 class="section-title" data-i18n="review_title">What Our <span>Travellers Say</span></h2>
       <p class="section-sub" data-i18n="review_sub">Real stories from real travellers who explored the world with us.</p>
@@ -783,7 +784,7 @@
 
     <div class="reviews-grid">
 
-      <div class="review-card fade-in">
+      <div class="review-card" data-reveal="scale-up" data-delay="0">
         <div class="review-stars">★★★★★</div>
         <p class="review-text" data-i18n="r1_text">The Dubai package was absolutely flawless! Every detail was taken care of — from the airport pickup to the desert safari. Connect The World truly lives up to its name.</p>
         <div class="reviewer">
@@ -795,7 +796,7 @@
         </div>
       </div>
 
-      <div class="review-card fade-in fade-in-delay-1">
+      <div class="review-card" data-reveal="scale-up" data-delay="150">
         <div class="review-stars">★★★★★</div>
         <p class="review-text" data-i18n="r2_text">We booked the European Grand Tour for our anniversary and it was the trip of a lifetime. Professional guides, comfortable transport, and magical memories at every stop.</p>
         <div class="reviewer">
@@ -807,7 +808,7 @@
         </div>
       </div>
 
-      <div class="review-card fade-in fade-in-delay-2">
+      <div class="review-card" data-reveal="scale-up" data-delay="300">
         <div class="review-stars">★★★★★</div>
         <p class="review-text" data-i18n="r3_text">Our Maldives honeymoon was pure magic. The overwater villa was stunning, and the team arranged a private candlelit dinner on the beach. Simply perfect!</p>
         <div class="reviewer">
@@ -819,7 +820,7 @@
         </div>
       </div>
 
-      <div class="review-card fade-in">
+      <div class="review-card" data-reveal="scale-up" data-delay="0">
         <div class="review-stars">★★★★★</div>
         <p class="review-text" data-i18n="r4_text">Japan was always my dream destination. The team handled everything seamlessly — from the Bullet Train tickets to the tea ceremony in Kyoto. Highly recommend!</p>
         <div class="reviewer">
@@ -831,7 +832,7 @@
         </div>
       </div>
 
-      <div class="review-card fade-in fade-in-delay-1">
+      <div class="review-card" data-reveal="scale-up" data-delay="150">
         <div class="review-stars">★★★★★</div>
         <p class="review-text" data-i18n="r5_text">The safari in Tanzania was beyond words. Seeing the Great Migration was a life-changing moment. Connect The World made it all possible with zero stress.</p>
         <div class="reviewer">
@@ -843,7 +844,7 @@
         </div>
       </div>
 
-      <div class="review-card fade-in fade-in-delay-2">
+      <div class="review-card" data-reveal="scale-up" data-delay="300">
         <div class="review-stars">★★★★★</div>
         <p class="review-text" data-i18n="r6_text">Booking in Arabic was so easy! The bilingual support team helped us throughout our Turkey trip. Professional, friendly, and highly knowledgeable.</p>
         <div class="reviewer">
@@ -864,7 +865,7 @@
      ============================================= -->
 <section class="faq" id="faq">
   <div class="container">
-    <div class="section-header centered fade-in">
+    <div class="section-header centered" data-reveal="fade-up">
       <div class="section-tag" data-i18n="faq_tag">FAQ</div>
       <h2 class="section-title" data-i18n="faq_title">Frequently Asked <span>Questions</span></h2>
       <p class="section-sub" data-i18n="faq_sub">Have questions? We have answers. If you need more help, our team is just a call away.</p>
@@ -872,7 +873,7 @@
 
     <div class="faq-grid">
 
-      <div class="faq-item fade-in">
+      <div class="faq-item" data-reveal="fade-up" data-delay="0">
         <button class="faq-question">
           <span data-i18n="faq1_q">How do I book a tour with Connect The World?</span>
           <div class="faq-icon">+</div>
@@ -880,7 +881,7 @@
         <div class="faq-answer" data-i18n="faq1_a">You can book directly through our website, call our UAE office, or visit us in person. Our team will guide you through every step of the booking process.</div>
       </div>
 
-      <div class="faq-item fade-in fade-in-delay-1">
+      <div class="faq-item" data-reveal="fade-up" data-delay="100">
         <button class="faq-question">
           <span data-i18n="faq2_q">Are your packages customisable?</span>
           <div class="faq-icon">+</div>
@@ -888,7 +889,7 @@
         <div class="faq-answer" data-i18n="faq2_a">Absolutely! All our packages are fully customisable. You can adjust the duration, accommodation type, activities, and budget to suit your preferences.</div>
       </div>
 
-      <div class="faq-item fade-in fade-in-delay-2">
+      <div class="faq-item" data-reveal="fade-up" data-delay="200">
         <button class="faq-question">
           <span data-i18n="faq3_q">Do you provide visa assistance?</span>
           <div class="faq-icon">+</div>
@@ -896,7 +897,7 @@
         <div class="faq-answer" data-i18n="faq3_a">Yes, we provide comprehensive visa assistance for all major destinations. Our team will guide you through the visa application process and required documentation.</div>
       </div>
 
-      <div class="faq-item fade-in">
+      <div class="faq-item" data-reveal="fade-up" data-delay="0">
         <button class="faq-question">
           <span data-i18n="faq4_q">Is travel insurance included in the packages?</span>
           <div class="faq-icon">+</div>
@@ -904,7 +905,7 @@
         <div class="faq-answer" data-i18n="faq4_a">Travel insurance can be added to any package. We strongly recommend it and can arrange comprehensive coverage at competitive rates.</div>
       </div>
 
-      <div class="faq-item fade-in fade-in-delay-1">
+      <div class="faq-item" data-reveal="fade-up" data-delay="100">
         <button class="faq-question">
           <span data-i18n="faq5_q">What payment methods do you accept?</span>
           <div class="faq-icon">+</div>
@@ -912,7 +913,7 @@
         <div class="faq-answer" data-i18n="faq5_a">We accept bank transfers, credit/debit cards, and cash payments at our office. Online payments are secured with SSL encryption.</div>
       </div>
 
-      <div class="faq-item fade-in fade-in-delay-2">
+      <div class="faq-item" data-reveal="fade-up" data-delay="200">
         <button class="faq-question">
           <span data-i18n="faq6_q">Can I book a group tour?</span>
           <div class="faq-icon">+</div>
@@ -1005,5 +1006,6 @@
 
 <script src="js/main.js"></script>
 <script src="js/enquiry.js"></script>
+<script src="js/animations.js"></script>
 </body>
 </html>
