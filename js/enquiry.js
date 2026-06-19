@@ -62,7 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
     submitLoader.style.display = 'inline';
     errorBox.style.display = 'none';
 
-    const { error } = await supabase.from('customers').insert([data]);
+    const { error } = await supabase.rpc('submit_enquiry', {
+      p_first_name: data.first_name,
+      p_last_name:  data.last_name,
+      p_contact:    data.contact,
+      p_country:    data.country,
+      p_city:       data.city,
+    });
 
     submitBtn.disabled = false;
     submitText.style.display = 'inline';
