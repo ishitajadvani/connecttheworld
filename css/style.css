@@ -1114,6 +1114,37 @@ body[dir="rtl"] .mobile-nav-panel { right: auto; left: 0; }
   box-shadow: 0 0 0 3px rgba(26,107,90,0.1);
 }
 .form-group input.invalid { border-color: #e53935; }
+.form-group select {
+  padding: 12px 40px 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--bg-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a4a68' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+.form-group select:focus {
+  border-color: var(--primary);
+  background-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(26,107,90,0.1);
+}
+.form-group select.invalid { border-color: #e53935; }
+.form-group select.select-disabled,
+.form-group select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+}
+body[dir="rtl"] .form-group select {
+  padding: 12px 16px 12px 40px;
+  background-position: left 14px center;
+  text-align: right;
+}
 .field-error {
   font-size: 0.78rem;
   color: #e53935;

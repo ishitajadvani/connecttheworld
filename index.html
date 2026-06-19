@@ -225,14 +225,18 @@
               </div>
               <div class="form-group">
                 <label for="country" data-i18n="enq_country">Country</label>
-                <input type="text" id="country" name="country" placeholder="United Arab Emirates" required />
+                <select id="country" name="country" required>
+                  <option value="" data-i18n="enq_country_ph">-- Select Country --</option>
+                </select>
                 <span class="field-error" id="err_country"></span>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="city" data-i18n="enq_city">City</label>
-                <input type="text" id="city" name="city" placeholder="Dubai" required />
+                <select id="city" name="city" required disabled>
+                  <option value="" data-i18n="enq_city_ph">-- Select City --</option>
+                </select>
                 <span class="field-error" id="err_city"></span>
               </div>
             </div>
@@ -1006,5 +1010,6 @@
 <script src="js/main.js"></script>
 <script src="js/enquiry.js"></script>
 <script src="js/animations.js"></script>
+<script src="js/form-dropdown.js"></script>
 </body>
 </html>
