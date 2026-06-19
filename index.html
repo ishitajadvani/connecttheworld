@@ -27,6 +27,7 @@
       <li><a href="#packages" data-i18n="nav_packages">Packages</a></li>
       <li><a href="#itinerary" data-i18n="nav_itinerary">Itinerary</a></li>
       <li><a href="#why-us" data-i18n="nav_about">About Us</a></li>
+      <li><a href="#enquiry" data-i18n="nav_enquiry">Enquiry</a></li>
       <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
     </ul>
 
@@ -48,6 +49,7 @@
     <a href="#packages" data-i18n="nav_packages">Packages</a>
     <a href="#itinerary" data-i18n="nav_itinerary">Itinerary</a>
     <a href="#why-us" data-i18n="nav_about">About Us</a>
+    <a href="#enquiry" data-i18n="nav_enquiry">Enquiry</a>
     <a href="#contact" data-i18n="nav_contact">Contact</a>
     <button class="mobile-lang-btn"><span data-i18n="lang_toggle">🌐 عربي</span></button>
   </div>
@@ -860,6 +862,73 @@
   </div>
 </footer>
 
+<!-- =============================================
+     ENQUIRY FORM
+     ============================================= -->
+<section class="enquiry" id="enquiry">
+  <div class="container">
+    <div class="section-header centered fade-in">
+      <div class="section-tag" data-i18n="enq_tag">Get In Touch</div>
+      <h2 class="section-title" data-i18n="enq_title">Send Us an <span>Enquiry</span></h2>
+      <p class="section-sub" data-i18n="enq_sub">Fill in your details and our travel experts will get back to you within 24 hours.</p>
+    </div>
+
+    <div class="enquiry-card fade-in">
+      <form id="enquiryForm" class="enquiry-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName" data-i18n="enq_fname">First Name</label>
+            <input type="text" id="firstName" name="first_name" placeholder="John" required />
+            <span class="field-error" id="err_firstName"></span>
+          </div>
+          <div class="form-group">
+            <label for="lastName" data-i18n="enq_lname">Last Name</label>
+            <input type="text" id="lastName" name="last_name" placeholder="Smith" required />
+            <span class="field-error" id="err_lastName"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact" data-i18n="enq_contact">Contact Number</label>
+            <input type="tel" id="contact" name="contact" placeholder="+971 50 123 4567" required />
+            <span class="field-error" id="err_contact"></span>
+          </div>
+          <div class="form-group">
+            <label for="country" data-i18n="enq_country">Country</label>
+            <input type="text" id="country" name="country" placeholder="United Arab Emirates" required />
+            <span class="field-error" id="err_country"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city" data-i18n="enq_city">City</label>
+            <input type="text" id="city" name="city" placeholder="Dubai" required />
+            <span class="field-error" id="err_city"></span>
+          </div>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-primary enq-submit" id="submitBtn">
+            <span class="submit-text" data-i18n="enq_submit">✈ Send Enquiry</span>
+            <span class="submit-loader" style="display:none;">⏳ Sending...</span>
+          </button>
+        </div>
+
+        <div class="form-success" id="formSuccess" style="display:none;">
+          <div class="success-icon">✅</div>
+          <h3 data-i18n="enq_success_title">Enquiry Received!</h3>
+          <p data-i18n="enq_success_msg">Thank you! Our travel experts will contact you within 24 hours.</p>
+        </div>
+        <div class="form-error-msg" id="formError" style="display:none;">
+          <span data-i18n="enq_error">Something went wrong. Please try again or call us directly.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/enquiry.js"></script>
 </body>
 </html>
