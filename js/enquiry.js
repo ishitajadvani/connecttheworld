@@ -5,7 +5,20 @@
 const SUPABASE_URL = 'https://fbesiytxmpnhpplwkaqu.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZiZXNpeXR4bXBuaHBwbHdrYXF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4ODczMzIsImV4cCI6MjA5NzQ2MzMzMn0.mvEnUDD72G7enOvte67kbU8hS516dA01o28ISW8o5cI';
 
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+async function callRPC(params) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/submit_enquiry`, {
+    method: 'POST',
+    headers: {
+      'apikey': SUPABASE_ANON_KEY,
+      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params),
+  });
+  const json = await res.json();
+  if (!res.ok) throw new Error(json.message || 'Request failed');
+  return json;
+}
 
 function validateForm(data) {
   let valid = true;
@@ -62,13 +75,18 @@ document.addEventListener('DOMContentLoaded', () => {
     submitLoader.style.display = 'inline';
     errorBox.style.display = 'none';
 
-    const { error } = await supabase.rpc('submit_enquiry', {
-      p_first_name: data.first_name,
-      p_last_name:  data.last_name,
-      p_contact:    data.contact,
-      p_country:    data.country,
-      p_city:       data.city,
-    });
+    let error = null;
+    try {
+      await callRPC({
+        p_first_name: data.first_name,
+        p_last_name:  data.last_name,
+        p_contact:    data.contact,
+        p_country:    data.country,
+        p_city:       data.city,
+      });
+    } catch (err) {
+      error = err;
+    }
 
     submitBtn.disabled = false;
     submitText.style.display = 'inline';
