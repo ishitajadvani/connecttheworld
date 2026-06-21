@@ -87,19 +87,21 @@
   <div class="container">
 
     <div class="faq-categories" data-reveal="fade-up" style="margin-bottom:40px;">
-      <button class="faq-cat-btn active">All</button>
-      <button class="faq-cat-btn">🏙️ Destinations</button>
-      <button class="faq-cat-btn">💡 Travel Tips</button>
-      <button class="faq-cat-btn">🍜 Food &amp; Culture</button>
-      <button class="faq-cat-btn">🏔️ Adventure</button>
-      <button class="faq-cat-btn">💎 Luxury</button>
-      <button class="faq-cat-btn">💰 Budget Travel</button>
+      <button class="faq-cat-btn active" data-cat="all">All</button>
+      <button class="faq-cat-btn" data-cat="destinations">🏙️ Destinations</button>
+      <button class="faq-cat-btn" data-cat="travel-tips">💡 Travel Tips</button>
+      <button class="faq-cat-btn" data-cat="food-culture">🍜 Food &amp; Culture</button>
+      <button class="faq-cat-btn" data-cat="adventure">🏔️ Adventure</button>
+      <button class="faq-cat-btn" data-cat="luxury">💎 Luxury</button>
+      <button class="faq-cat-btn" data-cat="budget-travel">💰 Budget Travel</button>
     </div>
 
-    <div class="blog-grid" data-reveal="fade-up" data-delay="100">
+    <div class="blog-count" style="margin-bottom:20px;font-size:0.88rem;color:var(--text-medium);">Showing <strong id="blogCountNum">7</strong> articles</div>
+
+    <div class="blog-grid" id="blogGrid">
 
       <!-- Featured -->
-      <div class="blog-card blog-featured">
+      <div class="blog-card blog-featured" data-cat="destinations">
         <img class="blog-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=80" alt="Dubai hidden gems" loading="lazy" />
         <div class="blog-body">
           <div class="blog-cat">Destinations</div>
@@ -116,7 +118,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="blog-card">
+      <div class="blog-card" data-cat="destinations">
         <img class="blog-img" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80" alt="Japan cherry blossom" loading="lazy" />
         <div class="blog-body">
           <div class="blog-cat">Destinations</div>
@@ -133,7 +135,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="blog-card">
+      <div class="blog-card" data-cat="budget-travel">
         <img class="blog-img" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80" alt="Maldives budget tips" loading="lazy" />
         <div class="blog-body">
           <div class="blog-cat">Budget Travel</div>
@@ -150,7 +152,7 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="blog-card">
+      <div class="blog-card" data-cat="adventure">
         <img class="blog-img" src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&q=80" alt="Cappadocia Turkey" loading="lazy" />
         <div class="blog-body">
           <div class="blog-cat">Adventure</div>
@@ -167,7 +169,7 @@
       </div>
 
       <!-- Card 5 -->
-      <div class="blog-card">
+      <div class="blog-card" data-cat="travel-tips">
         <img class="blog-img" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Europe packing tips" loading="lazy" />
         <div class="blog-body">
           <div class="blog-cat">Travel Tips</div>
@@ -184,7 +186,7 @@
       </div>
 
       <!-- Card 6 -->
-      <div class="blog-card">
+      <div class="blog-card" data-cat="luxury">
         <img class="blog-img" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" alt="Tanzania safari lodge" loading="lazy" />
         <div class="blog-body">
           <div class="blog-cat">Luxury</div>
@@ -201,7 +203,7 @@
       </div>
 
       <!-- Card 7 -->
-      <div class="blog-card">
+      <div class="blog-card" data-cat="food-culture">
         <img class="blog-img" src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80" alt="Bangkok street food" loading="lazy" />
         <div class="blog-body">
           <div class="blog-cat">Food &amp; Culture</div>
@@ -218,6 +220,42 @@
       </div>
 
     </div>
+
+    <script>
+    (function() {
+      var btns = document.querySelectorAll('.faq-cat-btn[data-cat]');
+      var cards = document.querySelectorAll('#blogGrid .blog-card');
+      var countEl = document.getElementById('blogCountNum');
+
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var cat = btn.getAttribute('data-cat');
+          var visible = 0;
+
+          cards.forEach(function(card) {
+            if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+              card.style.display = '';
+              /* restore featured span when showing all */
+              if (cat === 'all' && card.classList.contains('blog-featured')) {
+                card.style.gridColumn = '';
+              } else {
+                card.style.gridColumn = 'auto';
+              }
+              visible++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (countEl) countEl.textContent = visible;
+        });
+      });
+    })();
+    </script>
+
   </div>
 </section>
 
