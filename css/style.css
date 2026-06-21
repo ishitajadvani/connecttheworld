@@ -1249,8 +1249,10 @@ body[dir="rtl"] .form-group input { text-align: right; }
 .page-hero-breadcrumb span { color: var(--accent); font-weight: 600; }
 
 /* Nav active link for sub-pages */
-.nav-links a.page-active { color: var(--primary); font-weight: 700; }
-.nav-links a.page-active::after { width: 100%; }
+.nav-links a.page-active { color: var(--accent); font-weight: 700; }
+.nav-links a.page-active::after { width: 100%; background: var(--accent); }
+header.scrolled .nav-links a.page-active { color: var(--primary); }
+header.scrolled .nav-links a.page-active::after { background: var(--primary); }
 
 /* Contact page */
 .contact-page-grid {
