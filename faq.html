@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frequently asked questions about booking, packages, visa, payments, and travel with Connect The World." />
+  <title>FAQ | Connect The World</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header id="header">
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🌍</div>
+      <span>Connect The World</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li class="has-dropdown">
+        <a href="packages.html">Packages <span class="nav-arrow">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="packages.html">🌐 All Packages</a></li>
+          <li><a href="packages.html#domestic">🏠 Domestic</a></li>
+          <li><a href="packages.html#international">✈️ International</a></li>
+          <li><a href="packages.html#luxury">💎 Luxury</a></li>
+          <li><a href="packages.html#family">👨‍👩‍👧 Family</a></li>
+          <li><a href="packages.html#honeymoon">💑 Honeymoon</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="#">Services <span class="nav-arrow">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="visa.html">🛂 Visa Assistance</a></li>
+          <li><a href="hotels.html">🏨 Hotel Booking</a></li>
+          <li><a href="flights.html">✈️ Flight Booking</a></li>
+          <li><a href="trip-planner.html">🗺️ Custom Trip Planner</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="lang-btn" aria-label="Toggle language"><span>🌐 عربي</span></button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <div class="mobile-nav-panel">
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <div class="mobile-nav-group-title">Packages</div>
+    <a href="packages.html" class="mobile-nav-sub">All Packages</a>
+    <a href="packages.html#international" class="mobile-nav-sub">International</a>
+    <div class="mobile-nav-group-title">Services</div>
+    <a href="visa.html" class="mobile-nav-sub">Visa Assistance</a>
+    <a href="hotels.html" class="mobile-nav-sub">Hotel Booking</a>
+    <a href="flights.html" class="mobile-nav-sub">Flight Booking</a>
+    <a href="trip-planner.html" class="mobile-nav-sub">Custom Trip Planner</a>
+    <a href="about.html">About Us</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <button class="mobile-lang-btn"><span>🌐 عربي</span></button>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-tag">Help Centre</div>
+    <h1>Frequently Asked <span>Questions</span></h1>
+    <p>Everything you need to know about travelling with Connect The World. Can't find your answer? Contact our team directly.</p>
+    <div class="page-hero-breadcrumb">
+      <a href="index.html">Home</a> › <span>FAQ</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 72px 0; background: var(--bg-light);">
+  <div class="container">
+
+    <div class="faq-categories" data-reveal="fade-up">
+      <button class="faq-cat-btn active">All</button>
+      <button class="faq-cat-btn">📋 Booking</button>
+      <button class="faq-cat-btn">🎒 Packages</button>
+      <button class="faq-cat-btn">🛂 Visa</button>
+      <button class="faq-cat-btn">💳 Payments</button>
+      <button class="faq-cat-btn">🛡️ Travel Insurance</button>
+      <button class="faq-cat-btn">👥 Group Tours</button>
+      <button class="faq-cat-btn">❌ Cancellation</button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;" data-reveal="fade-up" data-delay="100">
+
+      <!-- BOOKING -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do I book a package with Connect The World?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">You can book in three easy ways: fill out the enquiry form on our website, call us directly on +971 4 321 9876, or visit our office at Dubai Marina. One of our travel experts will contact you within 24 hours to discuss your requirements and confirm availability. We'll then send you a detailed proposal and payment instructions.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How quickly will I receive booking confirmation?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Once your deposit is received, you'll get an email confirmation within 2–4 business hours. This includes your booking reference, itinerary summary, and a detailed breakdown of your package. Full booking documents including hotel vouchers and flight confirmations are typically sent 7–14 days before departure.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I make changes to my booking after confirmation?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Yes, amendments can usually be made up to 30 days before departure, subject to availability and any applicable change fees from hotels or airlines. Minor changes like adding excursions or upgrading hotel rooms can often be arranged up to 7 days before travel. Contact your dedicated travel consultant as soon as you need to make a change.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is your booking cancellation policy?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Cancellations made more than 60 days before departure receive a full refund minus a 10% administration fee. Cancellations 30–60 days prior incur a 30% fee. Within 30 days, the deposit is non-refundable. Within 14 days, 50% of the total package cost is charged. We strongly recommend purchasing travel insurance to protect against unforeseen cancellations.</div>
+      </div>
+
+      <!-- PACKAGES -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is included in a typical travel package?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Most packages include return flights from Dubai, accommodation on a bed &amp; breakfast or half board basis, airport transfers, a guided city tour, and 24/7 support from our team. Some packages also include select meals, entrance fees to major attractions, and travel insurance. Specific inclusions vary by package and are clearly listed on each package page.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I customise a package to suit my preferences?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Absolutely. Every package can be tailored to your exact needs. You can upgrade hotels, add extra nights, include additional excursions, switch to business class flights, or combine multiple destinations into one trip. Use our Custom Trip Planner or speak to a consultant who will build a bespoke itinerary around your budget, interests, and travel dates.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is the typical group size for your tours?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Our group tours typically have 10–20 participants, which ensures a personal experience with a dedicated guide while still enjoying the social benefits of group travel. Larger group bookings (20+) can be arranged with a private guide. We also offer fully private tours for families and couples who prefer to travel independently.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is there a minimum age for package tours?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Children of all ages are welcome on our family packages. For group tours, children under 12 must be accompanied by a parent or guardian. For adventure-focused trips such as safaris or hiking tours, a minimum age of 6 is recommended. Specific age requirements for individual excursions (e.g. hot air balloons, white water rafting) apply and will be communicated at booking.</div>
+      </div>
+
+      <!-- VISA -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do you provide visa assistance for all destinations?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Yes, we provide visa assistance for all major destinations we operate in, including Schengen countries, the USA, UK, Japan, Australia, and many more. Our visa team guides you through the entire process — from document preparation to application submission and embassy follow-up. We have a 98% visa approval success rate across all clients.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How long does the visa application process take?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Processing times vary by destination. Schengen visas typically take 2–4 weeks. US visas can take 6–10 weeks depending on the interview appointment schedule. UK visas are usually processed in 3–5 weeks. Japanese visas take 5–7 business days. We advise starting your visa application at least 8 weeks before travel for popular destinations.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What documents are required for visa applications?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Standard requirements include a valid passport (6+ months validity), recent passport-size photos, bank statements (last 3–6 months), travel insurance, confirmed hotel bookings, and a travel itinerary. Some embassies additionally require proof of employment, salary certificate, or a sponsor letter. Our team provides a comprehensive, destination-specific checklist for every client.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What happens if my visa application is refused?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">While our approval rate is very high, visa refusals can occasionally occur. In such cases, we immediately review the rejection reason and advise whether to appeal or reapply with additional supporting documents. Embassy visa fees are unfortunately non-refundable in most cases. Our service fee is fully refunded if a visa is refused due to insufficient embassy processing — but not in cases of missing or incorrect documents submitted by the client.</div>
+      </div>
+
+      <!-- PAYMENTS -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What payment methods do you accept?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">We accept bank transfers (most common), credit and debit cards (Visa, Mastercard, Amex), cash payments at our Dubai Marina office, and cheque payments from UAE-based corporate accounts. All online payments are processed through a PCI-DSS compliant payment gateway with SSL encryption. Payment receipts are issued immediately upon confirmation.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How much deposit is required to secure a booking?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">A deposit of 25% of the total package cost is required to confirm your booking and hold your space. For peak travel periods (Christmas, New Year, Eid holidays, summer school break), a higher deposit of 35–50% may be required due to limited availability. The remaining balance is due 30 days before departure unless otherwise agreed.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do you offer instalment plans?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Yes, for bookings made more than 90 days in advance, we offer a flexible instalment plan: 25% deposit on booking, 25% at 60 days prior, and the final 50% at 30 days prior. Instalment plans are available for packages over AED 5,000 per person. Please discuss this with your travel consultant at the time of booking.</div>
+      </div>
+
+      <!-- TRAVEL INSURANCE -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is travel insurance included in your packages?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Comprehensive travel insurance is available as an add-on to all packages and is highly recommended. Some premium packages include travel insurance in the price — this will be clearly stated in your package details. We work with leading UAE insurers and can arrange coverage for medical emergencies, trip cancellation, baggage loss, flight delays, and personal liability.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What does travel insurance typically cover?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Standard travel insurance covers: emergency medical expenses and evacuation, trip cancellation or curtailment, delayed or cancelled flights, lost or stolen baggage, passport loss, personal accidents, and 24/7 emergency assistance. Adventure activity coverage (skiing, diving, etc.) may require an additional premium. Our team will advise on the most appropriate policy for your specific itinerary.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do I make a claim on travel insurance?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">In the event of an emergency, call the 24/7 assistance number on your policy document immediately — all our travel insurance partners provide round-the-clock emergency support. For non-emergency claims, download the claim form from the insurer's website, complete it with supporting documentation (medical reports, police reports, receipts), and submit within 30 days of returning home. Our team can assist with claim documentation.</div>
+      </div>
+
+      <!-- GROUP TOURS -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is the minimum group size for a private group tour?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Private group tours can be arranged for as few as 2 people, making them perfect for couples, families, and small friend groups. For the best value on private tours, groups of 6–10 are ideal. There is no maximum group size — we have successfully managed corporate incentive trips and family reunions of 100+ people across multiple destinations simultaneously.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Are there group discounts available?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Yes, group discounts are available for bookings of 10 or more persons. Savings start at 5% for groups of 10–15, increasing to 10% for 16–25 persons, and up to 15% for larger groups. Corporate and incentive travel groups may qualify for additional negotiated rates including complimentary upgrades, dedicated group check-in, and branded tour materials. Contact our groups team for a custom quote.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can we have a fully private group with our own guide?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Yes, fully private tours are available for any group size. You'll have a dedicated, English-speaking (and in many destinations, Arabic-speaking) guide throughout your trip. Private groups benefit from flexible scheduling, customised sightseeing priorities, and the freedom to spend more time at places that matter most to your group. This is especially popular for family tours, honeymoon pairs, and corporate retreats.</div>
+      </div>
+
+      <!-- CANCELLATION -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is your cancellation policy in full?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Cancellations 60+ days before departure: refund of all amounts paid minus 10% admin fee. Cancellations 30–59 days prior: 70% refund of total package cost. Cancellations 15–29 days prior: 50% refund. Cancellations within 14 days: no refund on the package total. Deposits are non-refundable regardless of timing. Travel insurance is strongly recommended to cover unforeseen cancellations.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How long do refunds take to process?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Once a cancellation is confirmed and approved, refunds are processed within 7–14 business days to the original payment method. Bank transfers are completed within 3–5 business days after processing. Card refunds may take 5–10 business days to appear depending on your bank. You'll receive a refund confirmation email as soon as the transaction is initiated from our side.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I change my travel dates instead of cancelling?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">Date changes are possible and always preferable to cancellation. Changes made more than 30 days before departure are subject to a AED 250 per person amendment fee, plus any fare difference between original and new flights/hotels. Within 30 days, date change fees increase and availability cannot be guaranteed. We always try to accommodate date changes where possible — contact your consultant as soon as you know.</div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:56px;padding:40px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);" data-reveal="fade-up">
+      <h3 style="font-size:1.3rem;font-weight:800;color:var(--text-dark);margin-bottom:8px;">Still have questions?</h3>
+      <p style="color:var(--text-medium);margin-bottom:24px;">Our expert team is available 6 days a week to answer any questions and help you plan your perfect trip.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary">📞 Contact Us</a>
+        <a href="enquiry.html" class="btn-outline">✉ Send Enquiry</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contact-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><div class="logo-icon">🌍</div><span>Connect The World</span></a>
+      <p>Connecting travellers to the world's most beautiful destinations since 2010. Based in the UAE, serving clients across the globe.</p>
+      <div class="footer-social">
+        <button class="social-btn" aria-label="Facebook">f</button>
+        <button class="social-btn" aria-label="Instagram">▷</button>
+        <button class="social-btn" aria-label="Twitter">𝕏</button>
+        <button class="social-btn" aria-label="WhatsApp">W</button>
+        <button class="social-btn" aria-label="YouTube">▶</button>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="visa.html">Visa Assistance</a></li>
+        <li><a href="hotels.html">Hotel Booking</a></li>
+        <li><a href="flights.html">Flight Booking</a></li>
+        <li><a href="trip-planner.html">Custom Trip Planner</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="footer-contact">
+        <li><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Office 412, Al Habtoor Business Tower, Dubai Marina, Dubai, UAE</span></li>
+        <li><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg><span>+971 4 321 9876</span></li>
+        <li><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><span>info@connecttheworld.ae</span></li>
+        <li><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Mon – Sat: 9:00 AM – 7:00 PM</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Connect The World Tourism LLC. All rights reserved.</span>
+    <div style="display:flex;gap:16px;"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

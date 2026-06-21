@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Build your perfect custom trip with Connect The World's trip planner. Tell us your dream and we'll make it happen." />
+  <title>Custom Trip Planner | Connect The World</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header id="header">
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🌍</div>
+      <span>Connect The World</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li class="has-dropdown">
+        <a href="packages.html">Packages <span class="nav-arrow">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="packages.html">🌐 All Packages</a></li>
+          <li><a href="packages.html#domestic">🏠 Domestic</a></li>
+          <li><a href="packages.html#international">✈️ International</a></li>
+          <li><a href="packages.html#luxury">💎 Luxury</a></li>
+          <li><a href="packages.html#family">👨‍👩‍👧 Family</a></li>
+          <li><a href="packages.html#honeymoon">💑 Honeymoon</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="#" class="page-active">Services <span class="nav-arrow">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="visa.html">🛂 Visa Assistance</a></li>
+          <li><a href="hotels.html">🏨 Hotel Booking</a></li>
+          <li><a href="flights.html">✈️ Flight Booking</a></li>
+          <li><a href="trip-planner.html">🗺️ Custom Trip Planner</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="lang-btn" aria-label="Toggle language"><span>🌐 عربي</span></button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <div class="mobile-nav-panel">
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <div class="mobile-nav-group-title">Packages</div>
+    <a href="packages.html" class="mobile-nav-sub">All Packages</a>
+    <a href="packages.html#international" class="mobile-nav-sub">International</a>
+    <a href="packages.html#luxury" class="mobile-nav-sub">Luxury</a>
+    <div class="mobile-nav-group-title">Services</div>
+    <a href="visa.html" class="mobile-nav-sub">Visa Assistance</a>
+    <a href="hotels.html" class="mobile-nav-sub">Hotel Booking</a>
+    <a href="flights.html" class="mobile-nav-sub">Flight Booking</a>
+    <a href="trip-planner.html" class="mobile-nav-sub">Custom Trip Planner</a>
+    <a href="about.html">About Us</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <button class="mobile-lang-btn"><span>🌐 عربي</span></button>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-tag">Our Services</div>
+    <h1>Custom Trip <span>Planner</span></h1>
+    <p>Build your perfect trip, your way. Tell us your dream destination, budget, and travel style — we'll craft the ideal itinerary.</p>
+    <div class="page-hero-breadcrumb">
+      <a href="index.html">Home</a> › <span>Custom Trip Planner</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 72px 0; background: var(--bg-light);">
+  <div class="container" style="max-width: 860px;">
+
+    <div class="trip-planner-steps" data-reveal="fade-up">
+      <div class="trip-step active" id="stepTab1">
+        <div class="trip-step-num">1</div>
+        Destination
+      </div>
+      <div class="trip-step" id="stepTab2">
+        <div class="trip-step-num">2</div>
+        Details
+      </div>
+      <div class="trip-step" id="stepTab3">
+        <div class="trip-step-num">3</div>
+        Preferences
+      </div>
+      <div class="trip-step" id="stepTab4">
+        <div class="trip-step-num">4</div>
+        Submit
+      </div>
+    </div>
+
+    <div class="trip-planner-card" data-reveal="fade-up" data-delay="100">
+
+      <!-- Step 1: Destination -->
+      <div id="plannerStep1">
+        <h3 style="font-size:1.4rem;font-weight:800;color:var(--text-dark);margin-bottom:8px;">Where do you want to go?</h3>
+        <p style="color:var(--text-medium);margin-bottom:24px;">Enter your dream destination or choose a region and we'll suggest the perfect options.</p>
+        <div class="search-field" style="margin-bottom:20px;">
+          <label>Destination</label>
+          <input type="text" placeholder="e.g. Japan, Maldives, Europe tour..." />
+        </div>
+        <div style="margin-bottom:8px;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-medium);">Or browse by region</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;">
+          <button class="filter-chip active">🌏 Asia</button>
+          <button class="filter-chip">🏰 Europe</button>
+          <button class="filter-chip">🕌 Middle East</button>
+          <button class="filter-chip">🦁 Africa</button>
+          <button class="filter-chip">🗽 Americas</button>
+          <button class="filter-chip">🦘 Oceania</button>
+        </div>
+        <div style="display:flex;justify-content:flex-end;">
+          <button class="btn-primary" onclick="goToStep(2)">Next: Trip Details →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Details -->
+      <div id="plannerStep2" style="display:none;">
+        <h3 style="font-size:1.4rem;font-weight:800;color:var(--text-dark);margin-bottom:8px;">Tell us about your trip</h3>
+        <p style="color:var(--text-medium);margin-bottom:24px;">Help us understand your budget, travel dates, and group size so we can tailor the perfect experience.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+          <div class="search-field">
+            <label>Budget per Person</label>
+            <select>
+              <option>Under AED 3,000</option>
+              <option>AED 3,000 – 6,000</option>
+              <option>AED 6,000 – 12,000</option>
+              <option>AED 12,000 – 25,000</option>
+              <option>AED 25,000+</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label>Number of Travellers</label>
+            <select>
+              <option>1 Person</option>
+              <option>2 Persons (Couple)</option>
+              <option>3–5 Persons</option>
+              <option>6–10 Persons</option>
+              <option>10+ Persons (Group)</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label>Departure Date</label>
+            <input type="date" />
+          </div>
+          <div class="search-field">
+            <label>Return Date</label>
+            <input type="date" />
+          </div>
+        </div>
+        <div class="search-field" style="margin-bottom:24px;">
+          <label>Trip Duration (Days)</label>
+          <select>
+            <option>3–5 Days (Short Break)</option>
+            <option>6–8 Days (1 Week)</option>
+            <option>9–12 Days</option>
+            <option>13–16 Days (2 Weeks)</option>
+            <option>17+ Days (Extended)</option>
+          </select>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <button class="btn-outline" onclick="goToStep(1)">← Back</button>
+          <button class="btn-primary" onclick="goToStep(3)">Next: Preferences →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Preferences -->
+      <div id="plannerStep3" style="display:none;">
+        <h3 style="font-size:1.4rem;font-weight:800;color:var(--text-dark);margin-bottom:8px;">What's your travel style?</h3>
+        <p style="color:var(--text-medium);margin-bottom:8px;">Select all that apply — this helps us curate activities and experiences you'll love.</p>
+        <div class="trip-preference-grid">
+          <div class="pref-card" onclick="this.classList.toggle('selected')">
+            <span class="pref-icon">🏔️</span>
+            Adventure
+          </div>
+          <div class="pref-card" onclick="this.classList.toggle('selected')">
+            <span class="pref-icon">🏖️</span>
+            Beach
+          </div>
+          <div class="pref-card" onclick="this.classList.toggle('selected')">
+            <span class="pref-icon">🏛️</span>
+            Culture
+          </div>
+          <div class="pref-card" onclick="this.classList.toggle('selected')">
+            <span class="pref-icon">💎</span>
+            Luxury
+          </div>
+          <div class="pref-card" onclick="this.classList.toggle('selected')">
+            <span class="pref-icon">👨‍👩‍👧</span>
+            Family
+          </div>
+          <div class="pref-card" onclick="this.classList.toggle('selected')">
+            <span class="pref-icon">💑</span>
+            Honeymoon
+          </div>
+          <div class="pref-card" onclick="this.classList.toggle('selected')">
+            <span class="pref-icon">🦁</span>
+            Wildlife
+          </div>
+          <div class="pref-card" onclick="this.classList.toggle('selected')">
+            <span class="pref-icon">🎒</span>
+            Backpacking
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:16px;">
+          <button class="btn-outline" onclick="goToStep(2)">← Back</button>
+          <button class="btn-primary" onclick="goToStep(4)">Next: Your Details →</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Submit -->
+      <div id="plannerStep4" style="display:none;">
+        <h3 style="font-size:1.4rem;font-weight:800;color:var(--text-dark);margin-bottom:8px;">Almost done!</h3>
+        <p style="color:var(--text-medium);margin-bottom:24px;">Share your contact details and any special requests. Our travel experts will create a personalised itinerary and get back to you within 24 hours.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div class="search-field">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your full name" />
+          </div>
+          <div class="search-field">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="search-field">
+            <label>Phone / WhatsApp</label>
+            <input type="tel" placeholder="+971 50 123 4567" />
+          </div>
+        </div>
+        <div class="search-field" style="margin-bottom:24px;">
+          <label>Special Requests or Notes</label>
+          <textarea rows="4" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:inherit;font-size:0.92rem;resize:vertical;background:var(--bg-light);color:var(--text-dark);outline:none;" placeholder="Any dietary requirements, accessibility needs, special occasions, or specific activities you'd like to include..."></textarea>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <button class="btn-outline" onclick="goToStep(3)">← Back</button>
+          <button class="btn-primary" style="padding:14px 36px;font-size:1rem;">🗺️ Submit My Trip Plan</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Why plan with us -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;" data-reveal="fade-up" data-delay="200">
+      <div style="background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid var(--border);text-align:center;">
+        <div style="font-size:2rem;margin-bottom:12px;">🎯</div>
+        <div style="font-weight:800;color:var(--text-dark);margin-bottom:8px;">Fully Personalised</div>
+        <div style="font-size:0.85rem;color:var(--text-medium);line-height:1.6;">Every trip is custom-built for you. No cookie-cutter packages — just exactly what you want.</div>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid var(--border);text-align:center;">
+        <div style="font-size:2rem;margin-bottom:12px;">💬</div>
+        <div style="font-weight:800;color:var(--text-dark);margin-bottom:8px;">Dedicated Expert</div>
+        <div style="font-size:0.85rem;color:var(--text-medium);line-height:1.6;">A personal travel expert guides you from planning to your return. Available via call, WhatsApp, and email.</div>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid var(--border);text-align:center;">
+        <div style="font-size:2rem;margin-bottom:12px;">💰</div>
+        <div style="font-weight:800;color:var(--text-dark);margin-bottom:8px;">Best Value Guaranteed</div>
+        <div style="font-size:0.85rem;color:var(--text-medium);line-height:1.6;">We negotiate with hotels, airlines, and operators to get you premium experiences at the best possible price.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contact-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><div class="logo-icon">🌍</div><span>Connect The World</span></a>
+      <p>Connecting travellers to the world's most beautiful destinations since 2010. Based in the UAE, serving clients across the globe.</p>
+      <div class="footer-social">
+        <button class="social-btn" aria-label="Facebook">f</button>
+        <button class="social-btn" aria-label="Instagram">▷</button>
+        <button class="social-btn" aria-label="Twitter">𝕏</button>
+        <button class="social-btn" aria-label="WhatsApp">W</button>
+        <button class="social-btn" aria-label="YouTube">▶</button>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="visa.html">Visa Assistance</a></li>
+        <li><a href="hotels.html">Hotel Booking</a></li>
+        <li><a href="flights.html">Flight Booking</a></li>
+        <li><a href="trip-planner.html">Custom Trip Planner</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="footer-contact">
+        <li><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Office 412, Al Habtoor Business Tower, Dubai Marina, Dubai, UAE</span></li>
+        <li><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg><span>+971 4 321 9876</span></li>
+        <li><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><span>info@connecttheworld.ae</span></li>
+        <li><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Mon – Sat: 9:00 AM – 7:00 PM</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Connect The World Tourism LLC. All rights reserved.</span>
+    <div style="display:flex;gap:16px;"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/chatbot.js"></script>
+<script>
+function goToStep(n) {
+  for (var i = 1; i <= 4; i++) {
+    document.getElementById('plannerStep' + i).style.display = (i === n) ? 'block' : 'none';
+    document.getElementById('stepTab' + i).classList.toggle('active', i === n);
+  }
+}
+</script>
+</body>
+</html>

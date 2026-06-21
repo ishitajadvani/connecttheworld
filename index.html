@@ -87,46 +87,65 @@
 </head>
 <body>
 
-<!-- =============================================
-     HEADER
-     ============================================= -->
 <header id="header">
   <nav>
     <a href="index.html" class="logo">
       <div class="logo-icon">🌍</div>
       <span>Connect The World</span>
     </a>
-
     <ul class="nav-links">
-      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="index.html" class="page-active" data-i18n="nav_home">Home</a></li>
       <li><a href="destinations.html" data-i18n="nav_destinations">Destinations</a></li>
-      <li><a href="packages.html" data-i18n="nav_packages">Packages</a></li>
-      <li><a href="itinerary.html" data-i18n="nav_itinerary">Itinerary</a></li>
-      <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
-      <li><a href="enquiry.html" data-i18n="nav_enquiry">Enquiry</a></li>
+      <li class="has-dropdown">
+        <a href="packages.html" data-i18n="nav_packages">Packages <span class="nav-arrow">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="packages.html">🌐 All Packages</a></li>
+          <li><a href="packages.html#domestic">🏠 Domestic</a></li>
+          <li><a href="packages.html#international">✈️ International</a></li>
+          <li><a href="packages.html#luxury">💎 Luxury</a></li>
+          <li><a href="packages.html#family">👨‍👩‍👧 Family</a></li>
+          <li><a href="packages.html#honeymoon">💑 Honeymoon</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="#">Services <span class="nav-arrow">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="visa.html">🛂 Visa Assistance</a></li>
+          <li><a href="hotels.html">🏨 Hotel Booking</a></li>
+          <li><a href="flights.html">✈️ Flight Booking</a></li>
+          <li><a href="trip-planner.html">🗺️ Custom Trip Planner</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" data-i18n="nav_about">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
     </ul>
-
-    <button class="lang-btn" aria-label="Toggle language">
-      <span data-i18n="lang_toggle">🌐 عربي</span>
-    </button>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="lang-btn" aria-label="Toggle language"><span data-i18n="lang_toggle">🌐 عربي</span></button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
 </header>
-
-<!-- Mobile Navigation -->
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
   <div class="mobile-nav-panel">
-    <a href="index.html" data-i18n="nav_home">Home</a>
-    <a href="destinations.html" data-i18n="nav_destinations">Destinations</a>
-    <a href="packages.html" data-i18n="nav_packages">Packages</a>
-    <a href="itinerary.html" data-i18n="nav_itinerary">Itinerary</a>
-    <a href="about.html" data-i18n="nav_about">About Us</a>
-    <a href="enquiry.html" data-i18n="nav_enquiry">Enquiry</a>
-    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <div class="mobile-nav-group-title">Packages</div>
+    <a href="packages.html" class="mobile-nav-sub">All Packages</a>
+    <a href="packages.html#domestic" class="mobile-nav-sub">Domestic</a>
+    <a href="packages.html#international" class="mobile-nav-sub">International</a>
+    <a href="packages.html#luxury" class="mobile-nav-sub">Luxury</a>
+    <a href="packages.html#family" class="mobile-nav-sub">Family</a>
+    <a href="packages.html#honeymoon" class="mobile-nav-sub">Honeymoon</a>
+    <div class="mobile-nav-group-title">Services</div>
+    <a href="visa.html" class="mobile-nav-sub">Visa Assistance</a>
+    <a href="hotels.html" class="mobile-nav-sub">Hotel Booking</a>
+    <a href="flights.html" class="mobile-nav-sub">Flight Booking</a>
+    <a href="trip-planner.html" class="mobile-nav-sub">Custom Trip Planner</a>
+    <a href="about.html">About Us</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
     <button class="mobile-lang-btn"><span data-i18n="lang_toggle">🌐 عربي</span></button>
   </div>
 </div>
@@ -154,6 +173,40 @@
     <button class="hero-dot active" aria-label="Slide 1"></button>
     <button class="hero-dot" aria-label="Slide 2"></button>
     <button class="hero-dot" aria-label="Slide 3"></button>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="container">
+    <div class="search-card" data-reveal="fade-up">
+      <div class="search-tabs">
+        <button class="search-tab active">✈️ Packages</button>
+        <button class="search-tab">🌍 Destinations</button>
+        <button class="search-tab">🏨 Hotels</button>
+        <button class="search-tab">✈ Flights</button>
+      </div>
+      <div class="search-row">
+        <div class="search-field">
+          <label>Where to?</label>
+          <input type="text" placeholder="Dubai, Japan, Maldives..." />
+        </div>
+        <div class="search-field">
+          <label>Travel Date</label>
+          <input type="date" />
+        </div>
+        <div class="search-field">
+          <label>Travellers</label>
+          <select>
+            <option>1 Person</option>
+            <option>2 Persons</option>
+            <option>3-5 Persons</option>
+            <option>6-10 Persons</option>
+            <option>10+ Persons</option>
+          </select>
+        </div>
+        <button class="search-submit">🔍 Search</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -929,10 +982,21 @@
   </div>
 </section>
 
+<section class="cta-section" data-reveal="fade-up">
+  <div class="container">
+    <h2>Ready to Start Your <span style="color:var(--accent)">Dream Journey?</span></h2>
+    <p>Join 5,000+ happy travellers who have explored the world with Connect The World. Let us plan your perfect getaway.</p>
+    <div class="cta-btns">
+      <a href="packages.html" class="btn-white">✈ Explore Packages</a>
+      <a href="trip-planner.html" class="btn-outline-white">🗺️ Plan Custom Trip</a>
+    </div>
+  </div>
+</section>
+
 <!-- =============================================
      FOOTER
      ============================================= -->
-<footer id="contact">
+<footer id="contact-footer">
   <div class="footer-grid">
 
     <div class="footer-brand">
@@ -951,26 +1015,30 @@
     </div>
 
     <div class="footer-col">
-      <h4 data-i18n="footer_quick">Quick Links</h4>
+      <h4>Quick Links</h4>
       <ul class="footer-links">
-        <li><a href="index.html" data-i18n="footer_f1">Home</a></li>
-        <li><a href="about.html" data-i18n="footer_f2">About Us</a></li>
-        <li><a href="packages.html" data-i18n="footer_f3">Packages</a></li>
-        <li><a href="itinerary.html" data-i18n="footer_f4">Itinerary</a></li>
-        <li><a href="index.html#reviews" data-i18n="footer_f5">Reviews</a></li>
-        <li><a href="contact.html" data-i18n="footer_f6">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4 data-i18n="footer_destinations">Destinations</h4>
+      <h4>Services</h4>
       <ul class="footer-links">
-        <li><a href="destinations.html" data-i18n="footer_d1">Dubai & Abu Dhabi</a></li>
-        <li><a href="destinations.html" data-i18n="footer_d2">Europe Tours</a></li>
-        <li><a href="destinations.html" data-i18n="footer_d3">Maldives & Seychelles</a></li>
-        <li><a href="destinations.html" data-i18n="footer_d4">Asia & Far East</a></li>
-        <li><a href="destinations.html" data-i18n="footer_d5">Africa & Safari</a></li>
-        <li><a href="destinations.html" data-i18n="footer_d6">Americas</a></li>
+        <li><a href="visa.html">Visa Assistance</a></li>
+        <li><a href="hotels.html">Hotel Booking</a></li>
+        <li><a href="flights.html">Flight Booking</a></li>
+        <li><a href="trip-planner.html">Custom Trip Planner</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
       </ul>
     </div>
 
@@ -999,11 +1067,8 @@
   </div>
 
   <div class="footer-bottom">
-    <span data-i18n="footer_copy">© 2024 Connect The World Tourism LLC. All rights reserved.</span>
-    <div style="display:flex;gap:16px;">
-      <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
-      <a href="#" data-i18n="footer_terms">Terms & Conditions</a>
-    </div>
+    <span>© 2024 Connect The World Tourism LLC. All rights reserved.</span>
+    <div style="display:flex;gap:16px;"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
   </div>
 </footer>
 

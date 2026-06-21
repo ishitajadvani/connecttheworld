@@ -42,28 +42,57 @@
       <span>Connect The World</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="destinations.html" data-i18n="nav_destinations">Destinations</a></li>
-      <li><a href="packages.html" data-i18n="nav_packages">Packages</a></li>
-      <li><a href="itinerary.html" data-i18n="nav_itinerary">Itinerary</a></li>
-      <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
-      <li><a href="enquiry.html" class="page-active" data-i18n="nav_enquiry">Enquiry</a></li>
-      <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li class="has-dropdown">
+        <a href="packages.html">Packages <span class="nav-arrow">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="packages.html">🌐 All Packages</a></li>
+          <li><a href="packages.html#domestic">🏠 Domestic</a></li>
+          <li><a href="packages.html#international">✈️ International</a></li>
+          <li><a href="packages.html#luxury">💎 Luxury</a></li>
+          <li><a href="packages.html#family">👨‍👩‍👧 Family</a></li>
+          <li><a href="packages.html#honeymoon">💑 Honeymoon</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="#">Services <span class="nav-arrow">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="visa.html">🛂 Visa Assistance</a></li>
+          <li><a href="hotels.html">🏨 Hotel Booking</a></li>
+          <li><a href="flights.html">✈️ Flight Booking</a></li>
+          <li><a href="trip-planner.html">🗺️ Custom Trip Planner</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <button class="lang-btn" aria-label="Toggle language"><span data-i18n="lang_toggle">🌐 عربي</span></button>
     <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
 </header>
-
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
   <div class="mobile-nav-panel">
     <a href="index.html">Home</a>
     <a href="destinations.html">Destinations</a>
-    <a href="packages.html">Packages</a>
-    <a href="itinerary.html">Itinerary</a>
+    <div class="mobile-nav-group-title">Packages</div>
+    <a href="packages.html" class="mobile-nav-sub">All Packages</a>
+    <a href="packages.html#domestic" class="mobile-nav-sub">Domestic</a>
+    <a href="packages.html#international" class="mobile-nav-sub">International</a>
+    <a href="packages.html#luxury" class="mobile-nav-sub">Luxury</a>
+    <a href="packages.html#family" class="mobile-nav-sub">Family</a>
+    <a href="packages.html#honeymoon" class="mobile-nav-sub">Honeymoon</a>
+    <div class="mobile-nav-group-title">Services</div>
+    <a href="visa.html" class="mobile-nav-sub">Visa Assistance</a>
+    <a href="hotels.html" class="mobile-nav-sub">Hotel Booking</a>
+    <a href="flights.html" class="mobile-nav-sub">Flight Booking</a>
+    <a href="trip-planner.html" class="mobile-nav-sub">Custom Trip Planner</a>
     <a href="about.html">About Us</a>
-    <a href="enquiry.html">Enquiry</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
     <button class="mobile-lang-btn"><span data-i18n="lang_toggle">🌐 عربي</span></button>
   </div>
@@ -192,19 +221,23 @@
         <li><a href="about.html">About Us</a></li>
         <li><a href="packages.html">Packages</a></li>
         <li><a href="itinerary.html">Itinerary</a></li>
-        <li><a href="index.html#reviews">Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Destinations</h4>
+      <h4>Services</h4>
       <ul class="footer-links">
-        <li><a href="destinations.html">Dubai & Abu Dhabi</a></li>
-        <li><a href="destinations.html">Europe Tours</a></li>
-        <li><a href="destinations.html">Maldives & Seychelles</a></li>
-        <li><a href="destinations.html">Asia & Far East</a></li>
-        <li><a href="destinations.html">Africa & Safari</a></li>
-        <li><a href="destinations.html">Americas</a></li>
+        <li><a href="visa.html">Visa Assistance</a></li>
+        <li><a href="hotels.html">Hotel Booking</a></li>
+        <li><a href="flights.html">Flight Booking</a></li>
+        <li><a href="trip-planner.html">Custom Trip Planner</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -219,7 +252,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2024 Connect The World Tourism LLC. All rights reserved.</span>
-    <div style="display:flex;gap:16px;"><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a></div>
+    <div style="display:flex;gap:16px;"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
   </div>
 </footer>
 
