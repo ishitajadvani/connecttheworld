@@ -89,111 +89,376 @@
 </section>
 
 <!-- Destinations Grid -->
-<section class="destinations" id="destinations" style="padding-top:72px;">
+<section class="destinations" id="destinations" style="padding-top:72px;padding-bottom:80px;">
   <div class="container">
 
     <div class="filter-bar" data-reveal="fade-up">
       <label>Region:</label>
-      <button class="filter-chip active">All</button>
-      <button class="filter-chip">🏙️ Middle East</button>
-      <button class="filter-chip">🏯 Asia</button>
-      <button class="filter-chip">🏰 Europe</button>
-      <button class="filter-chip">🦁 Africa</button>
-      <button class="filter-chip">🏖️ Americas</button>
-      <button class="filter-chip">🏝️ Oceania</button>
+      <button class="filter-chip active" data-region="all">🌍 All</button>
+      <button class="filter-chip" data-region="middle-east">🏙️ Middle East</button>
+      <button class="filter-chip" data-region="asia">🏯 Asia</button>
+      <button class="filter-chip" data-region="europe">🏰 Europe</button>
+      <button class="filter-chip" data-region="africa">🦁 Africa</button>
+      <button class="filter-chip" data-region="americas">🏖️ Americas</button>
+      <button class="filter-chip" data-region="oceania">🏝️ Oceania</button>
     </div>
 
-    <div class="slider-wrapper">
-      <div class="slider-track" id="destTrack">
+    <div class="dest-count" id="destCount" style="margin-bottom:24px;font-size:0.88rem;color:var(--text-medium);">Showing <strong id="destCountNum">24</strong> destinations</div>
 
-        <div class="dest-card" data-reveal="scale-up" data-delay="0">
-          <img class="dest-img" src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=600&q=80" alt="Swiss Alps" loading="lazy" />
-          <div class="dest-overlay"></div>
-          <div class="dest-info">
-            <div class="dest-country" data-i18n="dest1_country">Switzerland</div>
-            <div class="dest-name" data-i18n="dest1_name">Swiss Alps & Zurich</div>
-            <div class="dest-desc" data-i18n="dest1_desc">Breathtaking mountain scenery, charming villages, and world-class skiing in the heart of Europe.</div>
-            <div class="dest-tag" data-i18n="dest1_tag">7 Days</div>
-          </div>
+    <div class="dest-grid" id="destGrid">
+
+      <!-- ===== MIDDLE EAST ===== -->
+      <div class="dest-card" data-region="middle-east">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai UAE" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">UAE</div>
+          <div class="dest-name">Dubai</div>
+          <div class="dest-desc">Futuristic skyline, desert safaris, world-class shopping malls and pristine beaches — all in one dazzling city.</div>
+          <div class="dest-tag">5 Days</div>
         </div>
-
-        <div class="dest-card" data-reveal="scale-up" data-delay="150">
-          <img class="dest-img" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="Tokyo Japan" loading="lazy" />
-          <div class="dest-overlay"></div>
-          <div class="dest-info">
-            <div class="dest-country" data-i18n="dest2_country">Japan</div>
-            <div class="dest-name" data-i18n="dest2_name">Tokyo & Kyoto</div>
-            <div class="dest-desc" data-i18n="dest2_desc">Experience the perfect blend of ancient tradition and modern innovation in the Land of the Rising Sun.</div>
-            <div class="dest-tag" data-i18n="dest2_tag">10 Days</div>
-          </div>
-        </div>
-
-        <div class="dest-card" data-reveal="scale-up" data-delay="300">
-          <img class="dest-img" src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" alt="Maldives" loading="lazy" />
-          <div class="dest-overlay"></div>
-          <div class="dest-info">
-            <div class="dest-country" data-i18n="dest3_country">Maldives</div>
-            <div class="dest-name" data-i18n="dest3_name">Maldives Paradise</div>
-            <div class="dest-desc" data-i18n="dest3_desc">Crystal-clear waters, overwater bungalows, and pristine white sand beaches await you.</div>
-            <div class="dest-tag" data-i18n="dest3_tag">5 Days</div>
-          </div>
-        </div>
-
-        <div class="dest-card" data-reveal="scale-up" data-delay="0">
-          <img class="dest-img" src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80" alt="Rome Italy" loading="lazy" />
-          <div class="dest-overlay"></div>
-          <div class="dest-info">
-            <div class="dest-country" data-i18n="dest4_country">Italy</div>
-            <div class="dest-name" data-i18n="dest4_name">Rome & Tuscany</div>
-            <div class="dest-desc" data-i18n="dest4_desc">Walk through centuries of history, savour authentic cuisine, and admire Renaissance art.</div>
-            <div class="dest-tag" data-i18n="dest4_tag">8 Days</div>
-          </div>
-        </div>
-
-        <div class="dest-card" data-reveal="scale-up" data-delay="150">
-          <img class="dest-img" src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=600&q=80" alt="Istanbul Turkey" loading="lazy" />
-          <div class="dest-overlay"></div>
-          <div class="dest-info">
-            <div class="dest-country" data-i18n="dest5_country">Turkey</div>
-            <div class="dest-name" data-i18n="dest5_name">Istanbul & Cappadocia</div>
-            <div class="dest-desc" data-i18n="dest5_desc">Where East meets West — explore stunning palaces, hot air balloons, and vibrant bazaars.</div>
-            <div class="dest-tag" data-i18n="dest5_tag">9 Days</div>
-          </div>
-        </div>
-
-        <div class="dest-card" data-reveal="scale-up" data-delay="300">
-          <img class="dest-img" src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80" alt="Bangkok Thailand" loading="lazy" />
-          <div class="dest-overlay"></div>
-          <div class="dest-info">
-            <div class="dest-country" data-i18n="dest6_country">Thailand</div>
-            <div class="dest-name" data-i18n="dest6_name">Bangkok & Phuket</div>
-            <div class="dest-desc" data-i18n="dest6_desc">Golden temples, tropical beaches, exquisite street food, and warm Thai hospitality.</div>
-            <div class="dest-tag" data-i18n="dest6_tag">7 Days</div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="dest-card" data-region="middle-east">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&q=80" alt="Abu Dhabi UAE" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">UAE</div>
+          <div class="dest-name">Abu Dhabi</div>
+          <div class="dest-desc">The UAE capital stuns with the Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, and Yas Island's thrilling attractions.</div>
+          <div class="dest-tag">3 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="middle-east">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Oman Muscat" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Oman</div>
+          <div class="dest-name">Muscat & Wahiba Sands</div>
+          <div class="dest-desc">Ancient forts, turquoise fjords, endless golden dunes and a warm culture make Oman the Gulf's hidden gem.</div>
+          <div class="dest-tag">6 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="middle-east">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1579606032821-4a426f72748d?w=600&q=80" alt="Petra Jordan" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Jordan</div>
+          <div class="dest-name">Petra & Wadi Rum</div>
+          <div class="dest-desc">Walk through the rose-red city of Petra and sleep under a billion stars in the Mars-like Wadi Rum desert.</div>
+          <div class="dest-tag">5 Days</div>
+        </div>
+      </div>
+
+      <!-- ===== ASIA ===== -->
+      <div class="dest-card" data-region="asia">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="Tokyo Japan" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Japan</div>
+          <div class="dest-name">Tokyo & Kyoto</div>
+          <div class="dest-desc">Experience the perfect blend of ancient tradition and modern innovation in the Land of the Rising Sun.</div>
+          <div class="dest-tag">10 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="asia">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" alt="Maldives" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Maldives</div>
+          <div class="dest-name">Maldives Paradise</div>
+          <div class="dest-desc">Crystal-clear waters, overwater bungalows, and pristine white sand beaches await you.</div>
+          <div class="dest-tag">5 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="asia">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80" alt="Bangkok Thailand" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Thailand</div>
+          <div class="dest-name">Bangkok & Phuket</div>
+          <div class="dest-desc">Golden temples, tropical beaches, exquisite street food, and warm Thai hospitality await.</div>
+          <div class="dest-tag">7 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="asia">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali Indonesia" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Indonesia</div>
+          <div class="dest-name">Bali</div>
+          <div class="dest-desc">Terraced rice fields, ancient Hindu temples, dramatic volcanoes, and a vibrant arts scene make Bali truly magical.</div>
+          <div class="dest-tag">7 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="asia">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80" alt="Singapore" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Singapore</div>
+          <div class="dest-name">Singapore City</div>
+          <div class="dest-desc">A gleaming city-state where futuristic Gardens by the Bay meets colonial heritage, hawker food, and luxury shopping.</div>
+          <div class="dest-tag">4 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="asia">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" alt="Vietnam" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Vietnam</div>
+          <div class="dest-name">Hanoi & Ha Long Bay</div>
+          <div class="dest-desc">Cruise through emerald limestone karsts on Ha Long Bay, explore ancient Hanoi's old quarter and savour pho on every corner.</div>
+          <div class="dest-tag">8 Days</div>
+        </div>
+      </div>
+
+      <!-- ===== EUROPE ===== -->
+      <div class="dest-card" data-region="europe">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=600&q=80" alt="Swiss Alps" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Switzerland</div>
+          <div class="dest-name">Swiss Alps & Zurich</div>
+          <div class="dest-desc">Breathtaking mountain scenery, charming villages, and world-class skiing in the heart of Europe.</div>
+          <div class="dest-tag">7 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="europe">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Paris France" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">France</div>
+          <div class="dest-name">Paris & Loire Valley</div>
+          <div class="dest-desc">The Eiffel Tower, Louvre, Versailles, and the finest cuisine in the world — Paris is always a good idea.</div>
+          <div class="dest-tag">6 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="europe">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80" alt="Rome Italy" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Italy</div>
+          <div class="dest-name">Rome & Tuscany</div>
+          <div class="dest-desc">Walk through centuries of history, savour authentic cuisine, and admire Renaissance art in the Eternal City.</div>
+          <div class="dest-tag">8 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="europe">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80" alt="Santorini Greece" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Greece</div>
+          <div class="dest-name">Santorini & Athens</div>
+          <div class="dest-desc">Blue-domed churches, volcanic sunsets, ancient ruins and turquoise Aegean waters — Greece is pure romance.</div>
+          <div class="dest-tag">7 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="europe">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=600&q=80" alt="Istanbul Turkey" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Turkey</div>
+          <div class="dest-name">Istanbul & Cappadocia</div>
+          <div class="dest-desc">Where East meets West — explore stunning palaces, hot air balloons over fairy chimneys, and vibrant bazaars.</div>
+          <div class="dest-tag">9 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="europe">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=600&q=80" alt="Barcelona Spain" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Spain</div>
+          <div class="dest-name">Barcelona & Madrid</div>
+          <div class="dest-desc">Gaudí's masterpieces, flamenco nights, incredible tapas and sunny Mediterranean coastline make Spain irresistible.</div>
+          <div class="dest-tag">8 Days</div>
+        </div>
+      </div>
+
+      <!-- ===== AFRICA ===== -->
+      <div class="dest-card" data-region="africa">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" alt="Tanzania Safari" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Tanzania</div>
+          <div class="dest-name">Serengeti Safari</div>
+          <div class="dest-desc">Witness the Great Migration, track the Big Five, and sleep in luxury tented camps under the vast African sky.</div>
+          <div class="dest-tag">8 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="africa">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1539020140153-e479b8cde1c0?w=600&q=80" alt="Marrakech Morocco" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Morocco</div>
+          <div class="dest-name">Marrakech & Sahara</div>
+          <div class="dest-desc">Vibrant souks, Moorish palaces, fragrant spice markets, and a camel trek across the golden Sahara dunes.</div>
+          <div class="dest-tag">7 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="africa">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=600&q=80" alt="Egypt Cairo Pyramids" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Egypt</div>
+          <div class="dest-name">Cairo & Luxor</div>
+          <div class="dest-desc">Stand before the Great Pyramids of Giza, cruise the Nile and explore the Valley of the Kings in ancient Luxor.</div>
+          <div class="dest-tag">7 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="africa">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=600&q=80" alt="Cape Town South Africa" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">South Africa</div>
+          <div class="dest-name">Cape Town & Winelands</div>
+          <div class="dest-desc">Table Mountain, Cape Point, the Garden Route, and world-class vineyards in one of Africa's most beautiful cities.</div>
+          <div class="dest-tag">9 Days</div>
+        </div>
+      </div>
+
+      <!-- ===== AMERICAS ===== -->
+      <div class="dest-card" data-region="americas">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=80" alt="New York USA" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">USA</div>
+          <div class="dest-name">New York City</div>
+          <div class="dest-desc">The city that never sleeps — Times Square, Central Park, the Met, Broadway shows, and world-class dining.</div>
+          <div class="dest-tag">6 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="americas">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=600&q=80" alt="Machu Picchu Peru" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Peru</div>
+          <div class="dest-name">Machu Picchu & Cusco</div>
+          <div class="dest-desc">Trek the Inca Trail to the legendary Lost City of the Incas perched high in the cloud-shrouded Andes.</div>
+          <div class="dest-tag">9 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="americas">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=600&q=80" alt="Rio de Janeiro Brazil" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Brazil</div>
+          <div class="dest-name">Rio de Janeiro</div>
+          <div class="dest-desc">Christ the Redeemer, Copacabana Beach, samba rhythms, Amazon adventures, and carnival fever — Brazil dazzles.</div>
+          <div class="dest-tag">8 Days</div>
+        </div>
+      </div>
+
+      <!-- ===== OCEANIA ===== -->
+      <div class="dest-card" data-region="oceania">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=600&q=80" alt="Sydney Australia" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">Australia</div>
+          <div class="dest-name">Sydney & Great Barrier Reef</div>
+          <div class="dest-desc">Iconic Opera House, Bondi Beach surf, world's largest coral reef and the vast Outback — Australia on a grand scale.</div>
+          <div class="dest-tag">12 Days</div>
+        </div>
+      </div>
+
+      <div class="dest-card" data-region="oceania">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=600&q=80" alt="New Zealand" loading="lazy" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-country">New Zealand</div>
+          <div class="dest-name">Queenstown & Fiordland</div>
+          <div class="dest-desc">Bungee jumping, Milford Sound fjords, Hobbiton film sets, and some of the world's most dramatic landscapes.</div>
+          <div class="dest-tag">10 Days</div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="slider-controls">
-      <button class="slider-btn" id="destPrev" aria-label="Previous">&#8592;</button>
-      <div class="slider-indicators">
-        <button class="slider-dot active" aria-label="Slide 1"></button>
-        <button class="slider-dot" aria-label="Slide 2"></button>
-        <button class="slider-dot" aria-label="Slide 3"></button>
-        <button class="slider-dot" aria-label="Slide 4"></button>
-      </div>
-      <button class="slider-btn" id="destNext" aria-label="Next">&#8594;</button>
+    <div id="destNoResults" style="display:none;text-align:center;padding:60px 20px;color:var(--text-medium);">
+      <div style="font-size:3rem;margin-bottom:16px;">🌍</div>
+      <h3 style="margin-bottom:8px;color:var(--text-dark);">No destinations found</h3>
+      <p>Try selecting a different region or <a href="enquiry.html" style="color:var(--primary);font-weight:600;">contact us</a> for custom options.</p>
     </div>
 
     <!-- CTA -->
-    <div style="text-align:center;margin-top:56px;" data-reveal="fade-up">
+    <div style="text-align:center;margin-top:64px;" data-reveal="fade-up">
       <p style="color:var(--text-medium);margin-bottom:20px;font-size:1.05rem;">Can't find your dream destination? We cover <strong>50+ countries</strong> worldwide.</p>
       <a href="enquiry.html" class="btn-primary">✈ Send an Enquiry</a>
     </div>
 
   </div>
 </section>
+
+<style>
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 0;
+}
+.dest-grid .dest-card {
+  width: auto;
+  flex-shrink: unset;
+  min-width: unset;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dest-grid .dest-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.2); }
+.dest-grid .dest-card.hidden { display: none; }
+@media (max-width: 900px) { .dest-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .dest-grid { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+(function() {
+  var chips = document.querySelectorAll('.filter-chip[data-region]');
+  var cards = document.querySelectorAll('.dest-card[data-region]');
+  var countEl = document.getElementById('destCountNum');
+  var noResults = document.getElementById('destNoResults');
+
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+
+      var region = chip.getAttribute('data-region');
+      var visible = 0;
+
+      cards.forEach(function(card) {
+        if (region === 'all' || card.getAttribute('data-region') === region) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (countEl) countEl.textContent = visible;
+      if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+})();
+</script>
 
 <footer id="contact-footer">
   <div class="footer-grid">
