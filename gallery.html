@@ -83,83 +83,281 @@
   </div>
 </section>
 
-<section style="padding: 72px 0; background: var(--bg-light);">
+<style>
+.gallery-section { background: #0c0c0c; padding: 72px 0 80px; }
+.gallery-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.gallery-chip {
+  padding: 9px 22px;
+  border-radius: 24px;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  background: transparent;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+}
+.gallery-chip:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+.gallery-chip.active { background: var(--accent); border-color: var(--accent); color: #000; }
+.gallery-photo-count {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+  margin-bottom: 28px;
+}
+.gallery-photo-count strong { color: rgba(255,255,255,0.7); }
+.gal-masonry {
+  columns: 3 260px;
+  column-gap: 10px;
+}
+.gal-item {
+  break-inside: avoid;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  background: #1a1a1a;
+}
+.gal-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gal-item:hover img { transform: scale(1.07); }
+.gal-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 55%, transparent 100%);
+  padding: 48px 16px 16px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+.gal-item:hover .gal-caption { opacity: 1; transform: translateY(0); }
+.gal-name {
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 0.03em;
+}
+.gal-sub {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.72rem;
+  display: block;
+  margin-top: 3px;
+}
+.gal-item.hidden { display: none; }
+@media (max-width: 768px) { .gal-masonry { columns: 2 160px; } }
+@media (max-width: 420px) { .gal-masonry { columns: 1; } }
+</style>
+
+<section class="gallery-section">
   <div class="container">
 
-    <div class="filter-bar" data-reveal="fade-up">
-      <label>Destination:</label>
-      <button class="filter-chip active">All</button>
-      <button class="filter-chip">🏙️ Dubai</button>
-      <button class="filter-chip">🏰 Europe</button>
-      <button class="filter-chip">🏯 Asia</button>
-      <button class="filter-chip">🏝️ Maldives</button>
-      <button class="filter-chip">🦁 Africa</button>
-      <button class="filter-chip">🗽 Americas</button>
+    <div class="gallery-filter" data-reveal="fade-up">
+      <button class="gallery-chip active" data-cat="all">✦ All</button>
+      <button class="gallery-chip" data-cat="dubai">🏙️ Dubai</button>
+      <button class="gallery-chip" data-cat="europe">🏰 Europe</button>
+      <button class="gallery-chip" data-cat="asia">🏯 Asia</button>
+      <button class="gallery-chip" data-cat="maldives">🏝️ Maldives</button>
+      <button class="gallery-chip" data-cat="africa">🦁 Africa</button>
+      <button class="gallery-chip" data-cat="americas">🗽 Americas</button>
     </div>
 
-    <div class="gallery-grid" data-reveal="fade-up" data-delay="100">
+    <div class="gallery-photo-count">Showing <strong id="galCount">18</strong> photos</div>
 
-      <div class="gallery-item wide tall">
-        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" alt="Dubai Skyline" loading="lazy" />
-        <div class="gallery-overlay"><span>🏙️ Dubai Skyline</span></div>
+    <div class="gal-masonry" id="galleryGrid">
+
+      <!-- DUBAI -->
+      <div class="gal-item" data-cat="dubai">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&q=85" alt="Dubai Skyline" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Dubai Skyline</span>
+          <span class="gal-sub">United Arab Emirates</span>
+        </div>
       </div>
 
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=80" alt="Burj Khalifa" loading="lazy" />
-        <div class="gallery-overlay"><span>🗼 Burj Khalifa</span></div>
+      <div class="gal-item" data-cat="dubai">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700&q=85" alt="Burj Khalifa" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Burj Khalifa</span>
+          <span class="gal-sub">Dubai, UAE</span>
+        </div>
       </div>
 
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" alt="Maldives overwater villa" loading="lazy" />
-        <div class="gallery-overlay"><span>🏝️ Maldives Villa</span></div>
+      <div class="gal-item" data-cat="dubai">
+        <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=700&q=85" alt="Dubai Desert Safari" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Desert Safari</span>
+          <span class="gal-sub">Dubai, UAE</span>
+        </div>
       </div>
 
-      <div class="gallery-item wide">
-        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80" alt="Japanese Temple" loading="lazy" />
-        <div class="gallery-overlay"><span>🏯 Kyoto Temple</span></div>
+      <!-- MALDIVES -->
+      <div class="gal-item" data-cat="maldives">
+        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700&q=85" alt="Maldives Overwater Villa" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Overwater Bungalow</span>
+          <span class="gal-sub">Maldives</span>
+        </div>
       </div>
 
-      <div class="gallery-item tall">
-        <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=600&q=80" alt="Swiss Alps" loading="lazy" />
-        <div class="gallery-overlay"><span>🏔️ Swiss Alps</span></div>
+      <div class="gal-item" data-cat="maldives">
+        <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=700&q=85" alt="Maldives Lagoon" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Crystal Lagoon</span>
+          <span class="gal-sub">Maldives</span>
+        </div>
       </div>
 
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Paris Eiffel Tower" loading="lazy" />
-        <div class="gallery-overlay"><span>🗼 Paris, France</span></div>
+      <!-- EUROPE -->
+      <div class="gal-item" data-cat="europe">
+        <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=700&q=85" alt="Swiss Alps" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Swiss Alps</span>
+          <span class="gal-sub">Switzerland</span>
+        </div>
       </div>
 
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" alt="Serengeti Lions" loading="lazy" />
-        <div class="gallery-overlay"><span>🦁 Serengeti, Africa</span></div>
+      <div class="gal-item" data-cat="europe">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&q=85" alt="Paris Eiffel Tower" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Eiffel Tower at Night</span>
+          <span class="gal-sub">Paris, France</span>
+        </div>
       </div>
 
-      <div class="gallery-item wide">
-        <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80" alt="Bangkok Temple" loading="lazy" />
-        <div class="gallery-overlay"><span>🛕 Bangkok Temple</span></div>
+      <div class="gal-item" data-cat="europe">
+        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=700&q=85" alt="Rome Colosseum" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">The Colosseum</span>
+          <span class="gal-sub">Rome, Italy</span>
+        </div>
       </div>
 
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80" alt="Rome Colosseum" loading="lazy" />
-        <div class="gallery-overlay"><span>🏛️ Rome, Italy</span></div>
+      <div class="gal-item" data-cat="europe">
+        <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=700&q=85" alt="Cappadocia Hot Air Balloons" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Hot Air Balloons</span>
+          <span class="gal-sub">Cappadocia, Turkey</span>
+        </div>
       </div>
 
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&q=80" alt="Cappadocia hot air balloons" loading="lazy" />
-        <div class="gallery-overlay"><span>🎈 Cappadocia, Turkey</span></div>
+      <div class="gal-item" data-cat="europe">
+        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=700&q=85" alt="Santorini Sunset" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Santorini Sunset</span>
+          <span class="gal-sub">Cyclades, Greece</span>
+        </div>
       </div>
 
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali rice terraces" loading="lazy" />
-        <div class="gallery-overlay"><span>🌿 Bali, Indonesia</span></div>
+      <!-- ASIA -->
+      <div class="gal-item" data-cat="asia">
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700&q=85" alt="Kyoto Temple" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Fushimi Inari Shrine</span>
+          <span class="gal-sub">Kyoto, Japan</span>
+        </div>
       </div>
 
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=600&q=80" alt="New York Skyline" loading="lazy" />
-        <div class="gallery-overlay"><span>🗽 New York, USA</span></div>
+      <div class="gal-item" data-cat="asia">
+        <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=700&q=85" alt="Bangkok Temple" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Wat Arun Temple</span>
+          <span class="gal-sub">Bangkok, Thailand</span>
+        </div>
+      </div>
+
+      <div class="gal-item" data-cat="asia">
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=85" alt="Bali Rice Terraces" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Tegallalang Rice Terraces</span>
+          <span class="gal-sub">Bali, Indonesia</span>
+        </div>
+      </div>
+
+      <div class="gal-item" data-cat="asia">
+        <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=700&q=85" alt="Singapore Gardens" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Gardens by the Bay</span>
+          <span class="gal-sub">Singapore</span>
+        </div>
+      </div>
+
+      <!-- AFRICA -->
+      <div class="gal-item" data-cat="africa">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=85" alt="Serengeti Safari" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Serengeti Safari</span>
+          <span class="gal-sub">Tanzania, Africa</span>
+        </div>
+      </div>
+
+      <div class="gal-item" data-cat="africa">
+        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=700&q=85" alt="Marrakech Morocco" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Marrakech Medina</span>
+          <span class="gal-sub">Morocco, Africa</span>
+        </div>
+      </div>
+
+      <!-- AMERICAS -->
+      <div class="gal-item" data-cat="americas">
+        <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=700&q=85" alt="New York City" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Manhattan Skyline</span>
+          <span class="gal-sub">New York, USA</span>
+        </div>
+      </div>
+
+      <div class="gal-item" data-cat="americas">
+        <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=700&q=85" alt="Machu Picchu" loading="lazy" />
+        <div class="gal-caption">
+          <span class="gal-name">Machu Picchu</span>
+          <span class="gal-sub">Cusco Region, Peru</span>
+        </div>
       </div>
 
     </div>
+
+    <script>
+    (function() {
+      var chips = document.querySelectorAll('.gallery-chip[data-cat]');
+      var items = document.querySelectorAll('#galleryGrid .gal-item');
+      var countEl = document.getElementById('galCount');
+
+      chips.forEach(function(chip) {
+        chip.addEventListener('click', function() {
+          chips.forEach(function(c) { c.classList.remove('active'); });
+          chip.classList.add('active');
+
+          var cat = chip.getAttribute('data-cat');
+          var visible = 0;
+
+          items.forEach(function(item) {
+            if (cat === 'all' || item.getAttribute('data-cat') === cat) {
+              item.classList.remove('hidden');
+              visible++;
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+
+          if (countEl) countEl.textContent = visible;
+        });
+      });
+    })();
+    </script>
+
   </div>
 </section>
 
