@@ -180,35 +180,158 @@
   <div class="container">
     <div class="search-card" data-reveal="fade-up">
       <div class="search-tabs">
-        <button class="search-tab active">✈️ Packages</button>
-        <button class="search-tab">🌍 Destinations</button>
-        <button class="search-tab">🏨 Hotels</button>
-        <button class="search-tab">✈ Flights</button>
+        <button class="search-tab active" data-tab="packages">✈️ Packages</button>
+        <button class="search-tab" data-tab="destinations">🌍 Destinations</button>
+        <button class="search-tab" data-tab="hotels">🏨 Hotels</button>
+        <button class="search-tab" data-tab="flights">✈ Flights</button>
       </div>
-      <div class="search-row">
-        <div class="search-field">
-          <label>Where to?</label>
-          <input type="text" placeholder="Dubai, Japan, Maldives..." />
+
+      <!-- PACKAGES panel -->
+      <div class="search-panel" id="panel-packages">
+        <div class="search-row">
+          <div class="search-field">
+            <label>Package Type</label>
+            <select>
+              <option value="">All Packages</option>
+              <option>Domestic</option>
+              <option>International</option>
+              <option>Luxury</option>
+              <option>Family</option>
+              <option>Honeymoon</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label>Destination</label>
+            <input type="text" placeholder="Dubai, Japan, Europe..." />
+          </div>
+          <div class="search-field">
+            <label>Travel Date</label>
+            <input type="date" />
+          </div>
+          <div class="search-field">
+            <label>Travellers</label>
+            <select>
+              <option>1 Person</option>
+              <option>2 Persons</option>
+              <option>3–5 Persons</option>
+              <option>6–10 Persons</option>
+              <option>10+ Persons</option>
+            </select>
+          </div>
+          <a href="packages.html" class="search-submit">🔍 Search</a>
         </div>
-        <div class="search-field">
-          <label>Travel Date</label>
-          <input type="date" />
-        </div>
-        <div class="search-field">
-          <label>Travellers</label>
-          <select>
-            <option>1 Person</option>
-            <option>2 Persons</option>
-            <option>3-5 Persons</option>
-            <option>6-10 Persons</option>
-            <option>10+ Persons</option>
-          </select>
-        </div>
-        <button class="search-submit">🔍 Search</button>
       </div>
+
+      <!-- DESTINATIONS panel -->
+      <div class="search-panel" id="panel-destinations" style="display:none;">
+        <div class="search-row">
+          <div class="search-field">
+            <label>Region</label>
+            <select>
+              <option value="">All Regions</option>
+              <option>Middle East</option>
+              <option>Asia</option>
+              <option>Europe</option>
+              <option>Africa</option>
+              <option>Americas</option>
+              <option>Oceania</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label>Destination</label>
+            <input type="text" placeholder="Search a country or city..." />
+          </div>
+          <div class="search-field">
+            <label>Trip Duration</label>
+            <select>
+              <option>Any Duration</option>
+              <option>1–3 Days</option>
+              <option>4–7 Days</option>
+              <option>1–2 Weeks</option>
+              <option>2+ Weeks</option>
+            </select>
+          </div>
+          <a href="destinations.html" class="search-submit">🔍 Search</a>
+        </div>
+      </div>
+
+      <!-- HOTELS panel -->
+      <div class="search-panel" id="panel-hotels" style="display:none;">
+        <div class="search-row">
+          <div class="search-field">
+            <label>City / Destination</label>
+            <input type="text" placeholder="Dubai, Paris, Tokyo..." />
+          </div>
+          <div class="search-field">
+            <label>Check In</label>
+            <input type="date" />
+          </div>
+          <div class="search-field">
+            <label>Check Out</label>
+            <input type="date" />
+          </div>
+          <div class="search-field">
+            <label>Guests</label>
+            <select>
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4+ Guests</option>
+            </select>
+          </div>
+          <a href="hotels.html" class="search-submit">🔍 Search</a>
+        </div>
+      </div>
+
+      <!-- FLIGHTS panel -->
+      <div class="search-panel" id="panel-flights" style="display:none;">
+        <div class="search-row" style="grid-template-columns:1fr 1fr 160px 160px 140px auto;">
+          <div class="search-field">
+            <label>From</label>
+            <input type="text" placeholder="Dubai (DXB)" />
+          </div>
+          <div class="search-field">
+            <label>To</label>
+            <input type="text" placeholder="London, Tokyo..." />
+          </div>
+          <div class="search-field">
+            <label>Departure</label>
+            <input type="date" />
+          </div>
+          <div class="search-field">
+            <label>Return</label>
+            <input type="date" />
+          </div>
+          <div class="search-field">
+            <label>Passengers</label>
+            <select>
+              <option>1 Pax</option>
+              <option>2 Pax</option>
+              <option>3 Pax</option>
+              <option>4+ Pax</option>
+            </select>
+          </div>
+          <a href="flights.html" class="search-submit">🔍 Search</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
+<script>
+(function() {
+  var tabs = document.querySelectorAll('.search-tab[data-tab]');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      document.querySelectorAll('.search-panel').forEach(function(p) { p.style.display = 'none'; });
+      document.getElementById('panel-' + tab.getAttribute('data-tab')).style.display = '';
+    });
+  });
+})();
+</script>
 
 <!-- =============================================
      STATS + ENQUIRY FORM (below hero)
