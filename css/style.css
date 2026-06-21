@@ -1249,10 +1249,16 @@ body[dir="rtl"] .form-group input { text-align: right; }
 .page-hero-breadcrumb span { color: var(--accent); font-weight: 600; }
 
 /* Nav active link for sub-pages */
-.nav-links a.page-active { color: var(--accent); font-weight: 700; }
-.nav-links a.page-active::after { width: 100%; background: var(--accent); }
-header.scrolled .nav-links a.page-active { color: var(--primary); }
-header.scrolled .nav-links a.page-active::after { background: var(--primary); }
+.nav-links a.page-active {
+  color: var(--accent);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+}
+header.scrolled .nav-links a.page-active {
+  color: var(--primary);
+  background: rgba(26, 107, 90, 0.08);
+}
 
 /* Contact page */
 .contact-page-grid {
