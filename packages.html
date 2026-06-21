@@ -100,143 +100,265 @@
       <button class="pkg-tab" data-cat="family">👨‍👩‍👧 Family</button>
       <button class="pkg-tab" data-cat="honeymoon">💑 Honeymoon</button>
     </div>
-    <div id="domestic"></div>
-    <div id="international"></div>
-    <div id="luxury"></div>
-    <div id="family"></div>
-    <div id="honeymoon"></div>
-    <div class="packages-grid">
+    <div class="pkg-count" style="margin-bottom:24px;font-size:0.88rem;color:var(--text-medium);">Showing <strong id="pkgCountNum">12</strong> packages</div>
 
-      <div class="package-card featured" data-reveal="scale-up" data-delay="0">
-        <div class="package-badge" data-i18n="pkg1_badge">Best Seller</div>
+    <div class="packages-grid" id="packagesGrid">
+
+      <!-- LUXURY -->
+      <div class="package-card featured" data-cat="luxury" data-reveal="scale-up" data-delay="0">
+        <div class="package-badge">Best Seller</div>
         <img class="package-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai Package" loading="lazy" />
         <div class="package-body">
-          <div class="package-title" data-i18n="pkg1_title">Dubai Luxury Escape</div>
+          <div class="package-title">Dubai Luxury Escape</div>
           <div class="package-meta">
-            <span class="package-meta-item">📅 <span data-i18n="pkg1_days">5 Days / 4 Nights</span></span>
-            <span class="package-meta-item">👥 <span data-i18n="pkg1_persons">Up to 8 persons</span></span>
-            <span class="package-meta-item">⭐ <span data-i18n="pkg1_type">Luxury</span></span>
+            <span class="package-meta-item">📅 5 Days / 4 Nights</span>
+            <span class="package-meta-item">👥 Up to 8 persons</span>
+            <span class="package-meta-item">💎 Luxury</span>
           </div>
-          <p class="package-desc" data-i18n="pkg1_desc">Experience the glitz and glamour of Dubai — Burj Khalifa, desert safari, and a dhow cruise.</p>
+          <p class="package-desc">Experience the glitz and glamour of Dubai — Burj Khalifa, desert safari, and a private dhow cruise dinner.</p>
           <div class="package-footer">
-            <div class="package-price">
-              <span class="price-from" data-i18n="pkg_from">From</span>
-              <span class="price-amount">AED 3,499</span>
-              <span class="price-per" data-i18n="pkg_per">/ per person</span>
-            </div>
-            <a href="enquiry.html" class="btn-sm" data-i18n="pkg_book">Book Now</a>
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 3,499</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
           </div>
         </div>
       </div>
 
-      <div class="package-card" data-reveal="scale-up" data-delay="150">
-        <div class="package-badge hot" data-i18n="pkg2_badge">Hot Deal</div>
+      <div class="package-card" data-cat="luxury" data-reveal="scale-up" data-delay="150">
+        <div class="package-badge">Top Pick</div>
+        <img class="package-img" src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" alt="Maldives Luxury" loading="lazy" />
+        <div class="package-body">
+          <div class="package-title">Maldives Overwater Retreat</div>
+          <div class="package-meta">
+            <span class="package-meta-item">📅 6 Days / 5 Nights</span>
+            <span class="package-meta-item">👥 2 persons</span>
+            <span class="package-meta-item">💎 Ultra Luxury</span>
+          </div>
+          <p class="package-desc">Private overwater villa, personal butler, sunset cruises and world-class diving in the Indian Ocean.</p>
+          <div class="package-footer">
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 14,999</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERNATIONAL -->
+      <div class="package-card" data-cat="international" data-reveal="scale-up" data-delay="0">
+        <div class="package-badge hot">Hot Deal</div>
         <img class="package-img" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Europe Tour" loading="lazy" />
         <div class="package-body">
-          <div class="package-title" data-i18n="pkg2_title">European Grand Tour</div>
+          <div class="package-title">European Grand Tour</div>
           <div class="package-meta">
-            <span class="package-meta-item">📅 <span data-i18n="pkg2_days">14 Days / 13 Nights</span></span>
-            <span class="package-meta-item">👥 <span data-i18n="pkg2_persons">Up to 20 persons</span></span>
-            <span class="package-meta-item">🚌 <span data-i18n="pkg2_type">Group Tour</span></span>
+            <span class="package-meta-item">📅 14 Days / 13 Nights</span>
+            <span class="package-meta-item">👥 Up to 20 persons</span>
+            <span class="package-meta-item">🚌 Group Tour</span>
           </div>
-          <p class="package-desc" data-i18n="pkg2_desc">Paris, Rome, Barcelona, Amsterdam and more — the ultimate European adventure in one journey.</p>
+          <p class="package-desc">Paris, Rome, Barcelona, Amsterdam and more — the ultimate European adventure in one unforgettable journey.</p>
           <div class="package-footer">
-            <div class="package-price">
-              <span class="price-from" data-i18n="pkg_from">From</span>
-              <span class="price-amount">AED 8,999</span>
-              <span class="price-per" data-i18n="pkg_per">/ per person</span>
-            </div>
-            <a href="enquiry.html" class="btn-sm" data-i18n="pkg_book">Book Now</a>
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 8,999</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
           </div>
         </div>
       </div>
 
-      <div class="package-card" data-reveal="scale-up" data-delay="300">
-        <img class="package-img" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80" alt="Maldives Honeymoon" loading="lazy" />
+      <div class="package-card" data-cat="international" data-reveal="scale-up" data-delay="150">
+        <div class="package-badge">New</div>
+        <img class="package-img" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="Japan Tour" loading="lazy" />
         <div class="package-body">
-          <div class="package-title" data-i18n="pkg3_title">Maldives Honeymoon</div>
+          <div class="package-title">Japan Discovery</div>
           <div class="package-meta">
-            <span class="package-meta-item">📅 <span data-i18n="pkg3_days">7 Days / 6 Nights</span></span>
-            <span class="package-meta-item">👥 <span data-i18n="pkg3_persons">2 persons</span></span>
-            <span class="package-meta-item">💑 <span data-i18n="pkg3_type">Romantic</span></span>
+            <span class="package-meta-item">📅 10 Days / 9 Nights</span>
+            <span class="package-meta-item">👥 Up to 15 persons</span>
+            <span class="package-meta-item">🏯 Cultural</span>
           </div>
-          <p class="package-desc" data-i18n="pkg3_desc">A private overwater villa, candlelit dinners, and snorkelling in the Indian Ocean paradise.</p>
+          <p class="package-desc">Cherry blossoms, ancient temples, bullet trains, and cutting-edge Tokyo — Japan at its finest.</p>
           <div class="package-footer">
-            <div class="package-price">
-              <span class="price-from" data-i18n="pkg_from">From</span>
-              <span class="price-amount">AED 12,499</span>
-              <span class="price-per" data-i18n="pkg_per">/ per person</span>
-            </div>
-            <a href="enquiry.html" class="btn-sm" data-i18n="pkg_book">Book Now</a>
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 7,299</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
           </div>
         </div>
       </div>
 
-      <div class="package-card" data-reveal="scale-up" data-delay="0">
-        <div class="package-badge" data-i18n="pkg4_badge">New</div>
-        <img class="package-img" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80" alt="Japan Tour" loading="lazy" />
-        <div class="package-body">
-          <div class="package-title" data-i18n="pkg4_title">Japan Discovery</div>
-          <div class="package-meta">
-            <span class="package-meta-item">📅 <span data-i18n="pkg4_days">10 Days / 9 Nights</span></span>
-            <span class="package-meta-item">👥 <span data-i18n="pkg4_persons">Up to 15 persons</span></span>
-            <span class="package-meta-item">🏯 <span data-i18n="pkg4_type">Cultural</span></span>
-          </div>
-          <p class="package-desc" data-i18n="pkg4_desc">Cherry blossoms, ancient temples, bullet trains, and cutting-edge Tokyo — Japan at its finest.</p>
-          <div class="package-footer">
-            <div class="package-price">
-              <span class="price-from" data-i18n="pkg_from">From</span>
-              <span class="price-amount">AED 7,299</span>
-              <span class="price-per" data-i18n="pkg_per">/ per person</span>
-            </div>
-            <a href="enquiry.html" class="btn-sm" data-i18n="pkg_book">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="package-card" data-reveal="scale-up" data-delay="150">
+      <div class="package-card" data-cat="international" data-reveal="scale-up" data-delay="300">
         <img class="package-img" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" alt="Safari Tanzania" loading="lazy" />
         <div class="package-body">
-          <div class="package-title" data-i18n="pkg5_title">Safari & Serengeti</div>
+          <div class="package-title">Safari & Serengeti</div>
           <div class="package-meta">
-            <span class="package-meta-item">📅 <span data-i18n="pkg5_days">8 Days / 7 Nights</span></span>
-            <span class="package-meta-item">👥 <span data-i18n="pkg5_persons">Up to 10 persons</span></span>
-            <span class="package-meta-item">🦁 <span data-i18n="pkg5_type">Adventure</span></span>
+            <span class="package-meta-item">📅 8 Days / 7 Nights</span>
+            <span class="package-meta-item">👥 Up to 10 persons</span>
+            <span class="package-meta-item">🦁 Adventure</span>
           </div>
-          <p class="package-desc" data-i18n="pkg5_desc">Witness the Great Migration across Tanzania's Serengeti and the majestic Ngorongoro Crater.</p>
+          <p class="package-desc">Witness the Great Migration across Tanzania's Serengeti and the majestic Ngorongoro Crater.</p>
           <div class="package-footer">
-            <div class="package-price">
-              <span class="price-from" data-i18n="pkg_from">From</span>
-              <span class="price-amount">AED 9,799</span>
-              <span class="price-per" data-i18n="pkg_per">/ per person</span>
-            </div>
-            <a href="enquiry.html" class="btn-sm" data-i18n="pkg_book">Book Now</a>
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 9,799</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
           </div>
         </div>
       </div>
 
-      <div class="package-card" data-reveal="scale-up" data-delay="300">
+      <div class="package-card" data-cat="international" data-reveal="scale-up" data-delay="0">
         <img class="package-img" src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&q=80" alt="Cappadocia Turkey" loading="lazy" />
         <div class="package-body">
-          <div class="package-title" data-i18n="pkg6_title">Turkey Highlights</div>
+          <div class="package-title">Turkey Highlights</div>
           <div class="package-meta">
-            <span class="package-meta-item">📅 <span data-i18n="pkg6_days">9 Days / 8 Nights</span></span>
-            <span class="package-meta-item">👥 <span data-i18n="pkg6_persons">Up to 18 persons</span></span>
-            <span class="package-meta-item">🕌 <span data-i18n="pkg6_type">Cultural & Adventure</span></span>
+            <span class="package-meta-item">📅 9 Days / 8 Nights</span>
+            <span class="package-meta-item">👥 Up to 18 persons</span>
+            <span class="package-meta-item">🕌 Cultural & Adventure</span>
           </div>
-          <p class="package-desc" data-i18n="pkg6_desc">Istanbul's grand mosques, a hot-air balloon ride over Cappadocia, and the turquoise Aegean coast.</p>
+          <p class="package-desc">Istanbul's grand mosques, a hot-air balloon ride over Cappadocia, and the turquoise Aegean coast.</p>
           <div class="package-footer">
-            <div class="package-price">
-              <span class="price-from" data-i18n="pkg_from">From</span>
-              <span class="price-amount">AED 5,699</span>
-              <span class="price-per" data-i18n="pkg_per">/ per person</span>
-            </div>
-            <a href="enquiry.html" class="btn-sm" data-i18n="pkg_book">Book Now</a>
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 5,699</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOMESTIC -->
+      <div class="package-card" data-cat="domestic" data-reveal="scale-up" data-delay="0">
+        <div class="package-badge">Popular</div>
+        <img class="package-img" src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&q=80" alt="Abu Dhabi" loading="lazy" />
+        <div class="package-body">
+          <div class="package-title">Abu Dhabi City Break</div>
+          <div class="package-meta">
+            <span class="package-meta-item">📅 3 Days / 2 Nights</span>
+            <span class="package-meta-item">👥 Up to 6 persons</span>
+            <span class="package-meta-item">🏛️ Cultural</span>
+          </div>
+          <p class="package-desc">Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Ferrari World and a Corniche sunset — the UAE capital in style.</p>
+          <div class="package-footer">
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 1,199</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="package-card" data-cat="domestic" data-reveal="scale-up" data-delay="150">
+        <img class="package-img" src="https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?w=600&q=80" alt="Oman Muscat" loading="lazy" />
+        <div class="package-body">
+          <div class="package-title">Oman Weekend Escape</div>
+          <div class="package-meta">
+            <span class="package-meta-item">📅 4 Days / 3 Nights</span>
+            <span class="package-meta-item">👥 Up to 8 persons</span>
+            <span class="package-meta-item">🏜️ Adventure</span>
+          </div>
+          <p class="package-desc">From Muscat's grand forts to Wahiba Sands dunes and the dramatic fjords of Khasab — Oman is extraordinary.</p>
+          <div class="package-footer">
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 1,799</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAMILY -->
+      <div class="package-card" data-cat="family" data-reveal="scale-up" data-delay="0">
+        <div class="package-badge">Family Fave</div>
+        <img class="package-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai Family" loading="lazy" />
+        <div class="package-body">
+          <div class="package-title">Dubai Family Fun</div>
+          <div class="package-meta">
+            <span class="package-meta-item">📅 5 Days / 4 Nights</span>
+            <span class="package-meta-item">👥 2 Adults + 2 Kids</span>
+            <span class="package-meta-item">👨‍👩‍👧 Family</span>
+          </div>
+          <p class="package-desc">IMG Worlds of Adventure, Legoland, Wild Wadi Waterpark, Ski Dubai, and a magical desert camp — kids will love every minute.</p>
+          <div class="package-footer">
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 4,299</span><span class="price-per">/ family</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="package-card" data-cat="family" data-reveal="scale-up" data-delay="150">
+        <img class="package-img" src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80" alt="Thailand Family" loading="lazy" />
+        <div class="package-body">
+          <div class="package-title">Thailand Family Adventure</div>
+          <div class="package-meta">
+            <span class="package-meta-item">📅 8 Days / 7 Nights</span>
+            <span class="package-meta-item">👥 2 Adults + 2 Kids</span>
+            <span class="package-meta-item">👨‍👩‍👧 Family</span>
+          </div>
+          <p class="package-desc">Elephant sanctuaries, floating markets, beach days in Phuket, and delicious street food — Thailand delights all ages.</p>
+          <div class="package-footer">
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 5,899</span><span class="price-per">/ family</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HONEYMOON -->
+      <div class="package-card" data-cat="honeymoon" data-reveal="scale-up" data-delay="0">
+        <img class="package-img" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80" alt="Maldives Honeymoon" loading="lazy" />
+        <div class="package-body">
+          <div class="package-title">Maldives Honeymoon</div>
+          <div class="package-meta">
+            <span class="package-meta-item">📅 7 Days / 6 Nights</span>
+            <span class="package-meta-item">👥 2 persons</span>
+            <span class="package-meta-item">💑 Romantic</span>
+          </div>
+          <p class="package-desc">A private overwater villa, candlelit beach dinners, couples spa and snorkelling in the Indian Ocean paradise.</p>
+          <div class="package-footer">
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 12,499</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="package-card" data-cat="honeymoon" data-reveal="scale-up" data-delay="150">
+        <div class="package-badge">Romantic</div>
+        <img class="package-img" src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80" alt="Santorini Honeymoon" loading="lazy" />
+        <div class="package-body">
+          <div class="package-title">Santorini Romantic Escape</div>
+          <div class="package-meta">
+            <span class="package-meta-item">📅 6 Days / 5 Nights</span>
+            <span class="package-meta-item">👥 2 persons</span>
+            <span class="package-meta-item">💑 Honeymoon</span>
+          </div>
+          <p class="package-desc">Sunset caldera views, cave suites, wine tasting, private boat tours and the most romantic sunsets on earth.</p>
+          <div class="package-footer">
+            <div class="package-price"><span class="price-from">From</span><span class="price-amount">AED 9,299</span><span class="price-per">/ per person</span></div>
+            <a href="enquiry.html" class="btn-sm">Book Now</a>
           </div>
         </div>
       </div>
 
     </div>
+
+    <div id="pkgNoResults" style="display:none;text-align:center;padding:60px 20px;color:var(--text-medium);">
+      <div style="font-size:3rem;margin-bottom:16px;">✈️</div>
+      <h3 style="margin-bottom:8px;color:var(--text-dark);">No packages found</h3>
+      <p>Try another category or <a href="enquiry.html" style="color:var(--primary);font-weight:600;">enquire for a custom package</a>.</p>
+    </div>
+
+    <script>
+    (function() {
+      var tabs = document.querySelectorAll('.pkg-tab');
+      var cards = document.querySelectorAll('#packagesGrid .package-card');
+      var countEl = document.getElementById('pkgCountNum');
+      var noResults = document.getElementById('pkgNoResults');
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          tabs.forEach(function(t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+
+          var cat = tab.getAttribute('data-cat');
+          var visible = 0;
+
+          cards.forEach(function(card) {
+            var cardCat = card.getAttribute('data-cat');
+            if (cat === 'all' || cardCat === cat) {
+              card.style.display = '';
+              visible++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (countEl) countEl.textContent = visible;
+          if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+        });
+      });
+    })();
+    </script>
 
     <div style="text-align:center;margin-top:56px;" data-reveal="fade-up">
       <p style="color:var(--text-medium);margin-bottom:20px;font-size:1.05rem;">Want a custom package tailored to your needs? <strong>We'll build it for you.</strong></p>
